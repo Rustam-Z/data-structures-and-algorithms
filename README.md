@@ -971,10 +971,10 @@ void insertNode(int item,int pos) {
 
     2. Set Item := CQueue [Front]
 
-    3.  If Front = N – 1	 	
-            then Set Front = 0 and Return.
+    3.  If Front = N – 1: 	
+            then Set Front = 0 and Return
 
-    4.  If Front = Rear 		
+    4.  If Front = Rear:		
             then Set Front = Rear = -1 and Return
 
     5.  Set Front := Front + 1 
