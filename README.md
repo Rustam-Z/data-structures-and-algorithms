@@ -256,8 +256,19 @@ By Rustam Zokirov
 
 
 ## Sorting Techniques
-Coming soon ...
+- Selection sort, bubble sort, insertion sort, quick sort, merge sort
 
+- **Sorting** - a process of arranging a set of data in certain order
+
+- *Internal sorting* - deals with data in memory of computer
+
+- *External sorting* - deals with data stored in data files when data is large
+
+- Selection Sort - O(n<sup>2</sup>)
+
+- Bubble Sort - best O(n) else O(n<sup>2</sup>)
+
+- Insrtion sort - worst O(n<sup>2</sup>), best O(n)
 
 ## Linked List
 - Array Limitations:
