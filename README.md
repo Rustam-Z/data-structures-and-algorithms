@@ -1,4 +1,4 @@
-# Data Structures
+# Data Structures 
 Lecture notes on Data Structures `SOC-2010`
 
 By Rustam Zokirov
@@ -933,6 +933,63 @@ void insertNode(int item,int pos) {
 
 ### Circular Queue
 - https://youtu.be/ihEmEcO2Hx8
+
+- **Drawbacks of linear queue** once the queue is full, eventhough few elements from the front are deleted and some occupied space is relieved, it is not possible to add anymore new elements, as the rear has already reached the Queue’s rear most position.  
+
+- In circular queue, once the Queue is full the "First" index of the Queue becomes the "Rear" most index, if and only if the "Front" element has moved forward. Otherwise it will  be  a "Queue overflow" state. <br><img src="images/13.png" width=300>
+
+-  **ENQUEUE** algorithm:
+    ```
+    Insert-Circular-Q(CQueue, Rear, Front, N, Item)
+
+    1.  If Front = -1 and Rear = -1:
+            then Set Front :=0 and go to step 4
+
+    2.  If Front = 0 and Rear = N-1 or Front = Rear + 1:
+            then Print: “Circular Queue Overflow” and Return
+
+    3.  If Rear = N -1:
+            then Set Rear := 0 and go to step 4
+
+    4.  Set CQueue [Rear] := Item and Rear := Rear + 1 
+
+    5.  Return
+    ```
+    - Here, `CQueue` is a circular queue.
+    - `Rear` represents the location in which the data element is to be inserted.
+    - `Front` represents the location from which the data element is to be removed.  
+    - `N` is the maximum size of CQueue 
+    - `Item` is the new item to be added. 
+    - Initailly `Rear = -1` and `Front = -1`.
+
+- **DEQUEUE** algorithm:
+    ```
+    Delete-Circular-Q(CQueue, Front, Rear, Item)
+
+    1. If Front = -1: 		
+            then Print: “Circular Queue Underflow” and Return
+
+    2. Set Item := CQueue [Front]
+
+    3.  If Front = N – 1	 	
+            then Set Front = 0 and Return.
+
+    4.  If Front = Rear 		
+            then Set Front = Rear = -1 and Return
+
+    5.  Set Front := Front + 1 
+
+    6.  Return
+    ```
+    - `CQueue` is the place where data are stored. 
+    - `Rear` represents the location in which the data element is to be inserted. 
+    - `Front` represents the location from which the data element is to be removed. 
+    - `Front` element is assigned to `Item`. 
+    - Initially, `Front = -1`.
+
+- While insert `REAR++`, `FRONT`
+- While delete `REAR`, `FRONT++`
+- If `FRONT = REAR + 1` then queue is full! Overflow will occur.
 
 
 ### Double Ended Queue

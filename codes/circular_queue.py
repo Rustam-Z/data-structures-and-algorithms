@@ -49,7 +49,7 @@ size = input("Enter the size of the Circular Queue: ")
 q = CircularQueue(int(size))
 
 # change the enqueue and dequeue statements as you want
-print(q.enqueue(10))
+print(q.dequeue(10))
 print(q.head)
 print(q.tail)
 print()
