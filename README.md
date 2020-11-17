@@ -551,7 +551,7 @@ New->next = last;
 ### Insertion at Particular Position in Circular Linked List 
 ```cpp
 void insertNode(int item,int pos) {
-	Node *New = new Node();
+    Node *New = new Node();
     Node *prev;
 	Node *cur;
 	New->data = item;    
@@ -657,7 +657,7 @@ void insertNode(int item,int pos) {
 - Pseudocode for PUSH, POP, PEEK:
     ```
     PUSH operation
-    Step 1: IF TOP - MAX-3
+    Step 1: IF TOP = MAX - 1
             PRINT "OVERFLOW" 
             Goto Step 4
             [END OF IF]
@@ -665,9 +665,8 @@ void insertNode(int item,int pos) {
     Step 3: SET STACK[TOP] = VALUE
     Step 4: END
 
-    
     POP operation
-    Step 1: IF TOP MILL
+    Step 1: IF TOP = NULL
             PRINT "UNDERFLOW"
             Goto Step 4 
             [END OF IF]
@@ -751,14 +750,14 @@ void insertNode(int item,int pos) {
     Char	Stack	    Operation
     2	    2	
     3	    2, 3	
-    *	    6	        2*3
+    *	    6           2*3
     2	    6, 2	
     4	    6, 2, 4 	
-    /	    6, 0	    2/4
+    /	    6, 0        2/4
     +	    0	        6+0
     4	    6, 4	
     3	    6, 4, 3	
-    +	    6, 7	    4+3
+    +	    6, 7        4+3
     -	    -1	        6-7
     ```
 
