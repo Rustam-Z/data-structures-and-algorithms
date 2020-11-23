@@ -3,6 +3,12 @@ Lecture notes on Data Structures `SOC-2010`
 
 By Rustam Zokirov
 
+## Extra:
+- Data Structures by Google Software Engineer, [link](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
+
+- [Dr. Ashish's Full Course](https://www.youtube.com/playlist?list=PLZwOihXJlZKl6AUgLP2dtc0DyM3bgFCvD)
+
+
 ## Content:
 - [Introduction to Data Strutures](#introduction-to-data-strutures)
     - [Introduction](#introduction)
@@ -44,6 +50,12 @@ By Rustam Zokirov
     - [Circular Queue](#Circular-Queue)
     - [Double Ended Queue](#Double-Ended-Queue)
     - [Priority Queue](#Priority-Queue)
+
+- [Tree](#tree)
+
+- [Binary Tree](#Binary-Tree)
+    - [Traversing a Binary Tree](#Traversing-a-Binary-Tree)
+
 
 ## Introduction to Data Strutures
 ### Introduction
@@ -205,7 +217,7 @@ By Rustam Zokirov
     - Worst `O(n)`
 
 ### Binary Search
-- Binary search method is very fast and efficient. Array must be sorted! <br><img src="images/07.png" width=500>
+- Binary search method is very fast and efficient. Array must be sorted! 
 
 - In this method:
     - To search an element we compare it with the element present at the center of the list. If it matches then the search is successful.
@@ -902,11 +914,11 @@ void insertNode(int item,int pos) {
         ```
     - **DEQUEUE**
         ```
-        Step 1: IF FRONT = -1 OR FRONT > REAR %3D
+        Step 1: IF FRONT = -1 OR FRONT > REAR
                     Write UNDERFLOW
                 ELSE
                     SET VAL = QUEUE[FRONT]
-                    SET FRONT = FRONT + 1 %3D   
+                    SET FRONT = FRONT + 1  
                 [END OF IF]
         Step 2: EXIT
         ```
@@ -1028,3 +1040,124 @@ void insertNode(int item,int pos) {
 - An element with *higher priority* is processed before an element with a l*ower priority*.
 
 - Two elements with the same priority are processed on a first-come-first-served (FCFS) basis.
+
+
+## Tree
+- **Root**: node without parent (A)
+
+- **Siblings**: nodes share the same parent
+
+- **Internal node**: node with at least one child (A, B, C, F)
+
+- **External node** (leaf): node without children (E, I, J, K, G, H, D)
+
+- **Ancestors** of a node: parent, grandparent, grand-grandparent, etc.
+
+- **Descendant** of a node: child, grandchild, grand-grandchild, etc.
+
+- **Depth** of a node: number of ancestors
+
+- **Height** of a tree: maximum depth of any node (3)
+
+- **Degree of a node**: the number of its children. The leaf of the tree does not have any child so its degree is zero
+
+- **Degree of a tree**: the maximum degree of a node in the tree.
+
+- **Subtree**: tree consisting of a node and its descendants
+
+- **Empty (Null)-tree**: a tree without any node
+
+- **Root-tree**: a tree with only one node
+
+- <img src="images/14.png" width=400>
+
+## Binary Tree
+- https://youtu.be/0k1gZ7m8WUk
+
+- It is a data structure that is defined as a collection of elements called nodes.
+
+- In a binary tree, 
+    - The topmost element is called the root node.
+ 
+    - Each node has 0, 1, or at the most 2 children. 
+
+    - A node that has zero children is called a leaf node or a terminal node. 
+
+    - Every node contains a data element, a left pointer which points to the left child, and a right pointer which points to the right child
+
+- **Complete binary tree** - every level except possibly the last is completely filled. All nodes must appear as far left as possible.
+    - <img src="images/16.png" width=400>
+
+- Linked list implementation of binary tree:
+    - Every node will have three parts: the **data element**, **a pointer to the left node**, and **a pointer to the right node**. 
+
+        ```cpp
+        class Node {
+            public: 
+                Node *left;
+                int data;
+                Node *right;
+        };
+        ```
+    - Every binary tree has a pointer `ROOT`, which points to the root element (topmost element) of the tree. If `ROOT = NULL`, then the tree is **empty**.
+
+- Array implementation of binary treee:
+    - If `TREE[1] = ROOT` then
+        - the left child of a node `K` ==> `2*K`
+        - the right child of a node `K` ==> `2*K+1`
+        - parent of any node `K` ==> `floor(K/2)` 
+        - max size of tree is 2<sup>h+1</sup>-1, where h = height
+        - P.S. floor(3/2) = 2
+    
+    - If `TREE[0] = ROOT` then
+        - the left child of a node `K` ==> `2*K+1`
+        - the right child of a node `K` ==> `2*K+2`
+        - parent of any node `K` ==> `floor(K/2)-1`
+
+- Algebraic expressions with binary tree
+    - `((a + b) – (c * d)) % ((f ^ g) / (h – i))` 
+
+    - <img src="images/17.png" width=400>
+
+
+### Traversing a Binary Tree 
+- https://youtu.be/H0exHo7KAhQ
+
+- PREORDER (NLR), POSTORDER (LRN) & INORDER TRAVERSAL (LNR)
+
+- Preorder traversal can be used to extract a prefix notation
+
+- <img src="images/18.png" width=400>
+
+- **PREORDER TRAVERSAL** (NLR)
+    1. Visiting the root node,
+    2. Traversing the left sub-tree, and finally
+    3. Traversing the right sub-tree.
+
+        ```
+        Example outputs with preorder:
+        (a) A, B, D, G, H, L, E, C, F, I, J, K
+        (b) A, B, D, C, E, F, G, H, I
+        ```
+
+- **POSTORDER TRAVERSAL** (LRN)
+    1. Traversing the left sub-tree,
+    2. Visiting the root node, and finally
+    3. Traversing the right sub-tree.
+
+        ```
+        Example outputs with postorder:
+        (a) G, L, H, D, E, B, I, K, J, F, C, A
+        (b) D, B, H, I, G, F, E, C, A
+        ```
+
+- **INORDER TRAVERSAL** (LNR)
+    1. Traversing the left sub-tree,
+    2. Traversing the right sub-tree, and finally
+    3. Visiting the root node.
+
+        ```
+        Example outputs with inorder:
+        (a) G, D, H, L, B, E, A, C, I, F, K, J
+        (b) B, D, A, E, H, G, I, F, C
+        ```
