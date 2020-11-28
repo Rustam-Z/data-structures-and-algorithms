@@ -122,6 +122,7 @@ By Rustam Zokirov
 
 - **O (Big-O) notation** (worst time, upper bound, maximum complexity)
     - `0 <= f(n) <= c*g(n) for all n >= n0`
+    
     ```
     f(n) = 3n + 2, g(n) = n, f(n) = Og(n)
 
@@ -136,6 +137,7 @@ By Rustam Zokirov
 
 - **Ω (Omega) notation**  (best amount of time, lower bound) 
     - `0 <= c*g(n) <= f(n) for all n >=n0`
+    
      ```
     f(n) = 3n + 2, g(n) = n, f(n) = Ωg(n)
 
@@ -149,9 +151,10 @@ By Rustam Zokirov
 
 - **Θ (Big-theta) notation** (average case, lower & upper sandwich)
     - `0 <= c1*g(n) <= f(n) <= c2*g(n)`
+    
     ```
     f(n) = 3n + 2, g(n) = n, f(n) = Θg(n)
-    
+
     C1*n <= 3n + 2 <= C2*n
 
     3n + 2 <= C2*n            c1*n <= 3n + 2
@@ -743,23 +746,23 @@ void insertNode(int item,int pos) {
     +	    (+	        AB*
     (	    (+(	        AB*
     C	    (+(	        AB*C
-    /	    (+(/	    AB*C
-    D	    (+(/	    AB*CD
+    /	    (+(/	AB*C
+    D	    (+(/	AB*CD
     )	    (+	        AB*CD/
     -	    (-	        AB*CD/+
-    (	    (-( 	    AB*CD/+
-    D	    (-( 	    AB*CD/+D
-    +	    (-(+	    AB*CD/+D
-    E	    (-(+	    AB*CD/+DE
+    (	    (-( 	AB*CD/+
+    D	    (-( 	AB*CD/+D
+    +	    (-(+	AB*CD/+D
+    E	    (-(+	AB*CD/+DE
     )	    (-	        AB*CD/+DE+
-    )		            AB*CD/+DE+-
+    )		        AB*CD/+DE+-
     ```
 
 ### Evaluation of Postfix expression
 -   ```
     [AB*CD/+DE+-] ==> 2 3 * 2 4 / + 4 3 + -
 
-    Char	Stack	    Operation
+    Char    Stack	Operation
     2	    2	
     3	    2, 3	
     *	    6           2*3
@@ -812,9 +815,9 @@ void insertNode(int item,int pos) {
     4	    )+	        2 9 / 4
     -	    )+-	        2 9 / 4
     3	    )+-	        2 9 / 4 3
-    *	    )+-* 	    2 9 / 4 3
-    7	    )+-*	    2 9 / 4 3 7
-    /	    )+-*/	    2 9 / 4 3 7
+    *	    )+-* 	2 9 / 4 3
+    7	    )+-*	2 9 / 4 3 7
+    /	    )+-*/	2 9 / 4 3 7
     14	    )+-*/       2 9 / 4 3 7 14
     (                   2 9 / 4 3 7 14 / * - +
 
@@ -843,9 +846,9 @@ void insertNode(int item,int pos) {
     4	    (+	        2 9 / 4
     -	    (+-	        2 9 / 4
     3	    (+-	        2 9 / 4 3
-    *	    (+-* 	    2 9 / 4 3
-    7	    (+-*	    2 9 / 4 3 7
-    /	    (+-*/	    2 9 / 4 3 7
+    *	    (+-* 	2 9 / 4 3
+    7	    (+-*	2 9 / 4 3 7
+    /	    (+-*/       2 9 / 4 3 7
     14	    (+-*/       2 9 / 4 3 7 14
     )                   2 9 / 4 3 7 14 / * - +
 
