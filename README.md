@@ -56,6 +56,10 @@ By Rustam Zokirov
 - [Binary Tree](#Binary-Tree)
     - [Traversing a Binary Tree](#Traversing-a-Binary-Tree)
 
+- [Binary Search Tree](#Binary-Search-Tree)
+    - [Search & Insert Operation in Binary Search Tree](#Search-&-Insert-Operation-in-Binary-Search-Tree)
+
+    - [Deletion Operation in Binary Search Tree](#Deletion-Operation-in-Binary-Search-Tree)
 
 ## Introduction to Data Strutures
 ### Introduction
@@ -1161,3 +1165,33 @@ void insertNode(int item,int pos) {
         (a) G, D, H, L, B, E, A, C, I, F, K, J
         (b) B, D, A, E, H, G, I, F, C
         ```
+
+## Binary Search Tree
+- **A binary search tree**, also known as an ordered binary tree, is a variant of binary trees in which the nodes are arranged in an order.
+
+- Left sub-tree nodes must have a value less than that of the root node.
+
+- Right sub-tree must have a value either equal to or greater  than the root node.
+
+- `O(n)` worst case for searching in BST
+
+### Search & Insert Operation in Binary Search Tree
+- <img src="images/20.png" width=350>
+
+- <img src="images/21.png" width=350>
+
+- Insert `39,27,45,18,29,40,9,21,10,19,54,59,65,60` in binary search tree
+    <br><img src="images/19.png" width=300>
+
+### Deletion Operation in Binary Search Tree
+- Deleting a `Node` that has no children, `delete 78`
+    <img src="images/22.png" width=400>
+
+- Deleting a `Node` with One Child, `delete 54`
+    <img src="images/23.png" width=400>
+
+- Deleting a `Node` with Two Children, `delete 56`
+    <img src="images/24.png" width=400>
+
+- Main Algorithm
+    <br><img src="images/25.png" width=400>
