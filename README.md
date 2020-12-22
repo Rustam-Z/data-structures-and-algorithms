@@ -61,6 +61,8 @@ By Rustam Zokirov
 
     - [Deletion Operation in Binary Search Tree](#Deletion-Operation-in-Binary-Search-Tree)
 
+- [Graphs](#Graphs)
+
 ## Introduction to Data Strutures
 ### Introduction
 - Data structure usually refers to an *data organization*, *management*, and *storage* in main memory that enables efficiently access and modification.
@@ -1198,3 +1200,15 @@ void insertNode(int item,int pos) {
 
 - Main Algorithm
     <br><img src="images/25.png" width=400>
+
+## Graphs
+- Vertices (points), edges (lines), undericted graph, directed graph
+
+- Adjacent nodes and neighbors:
+```
+ O----O adjacent nodes
+```
+
+- Degree of a node - total number os edges containing the node. deg(0) <-> isolated node
+
+### Breadth First Search Traversal
