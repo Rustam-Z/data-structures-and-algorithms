@@ -56,6 +56,8 @@ By Rustam Zokirov | Fall semester 2020
     - [Threaded Binary Tree Two-Way](#Threaded-Binary-Tree-Two-Way)
     - [Inserting Node in TBT](#Inserting-Node-in-TBT)
 - [AVL Trees](#AVL-Trees)
+    - [Insertion in AVL Tree](#Insertion-in-AVL-Tree)
+    - [Deletion in AVL Tree](#Deletion-in-AVL-Tree)
 
 ## Introduction to Data Strutures
 ### Introduction
@@ -1115,5 +1117,35 @@ a thread will appear in the **right field** of a node and will point to the next
 - Inserting in the left side <br><img src="images/44.png" width=500>
 
 ## AVL Trees
-- Adelson-Velsky-Landis
-- Self-balancing BST
+- https://youtu.be/1QSYxIKXXP4
+- Adelson-Velsky-Landis - one of many types of Balanced Binary Search Tree. `O(log(n))`
+- **Balanced Factor (BF)**: `BF(node) = HEGHT(node.right) - HEIGH(node.left)`
+- Where `HEIGHT(x)` is the hight of node `x`. Which is the **number of edges** between `x` and the **furthest leaf**.
+- -1, 0, +1 balanced factor values.
+
+### Insertion in AVL Tree
+- <img src="images/45.png" width=400><img src="images/47.png" width=400>
+- <img src="images/46.png" width=500><img src="images/48.png" width=500>
+- <img src="images/49.png" width=400>
+- <img src="images/50.png" width=400>
+- <img src="images/51.png" width=500>
+- <img src="images/52.png" width=350>
+- <img src="images/53.png" width=500>
+- **Examples**:
+    - <img src="images/54.png" width=500>
+    - <img src="images/55.png" width=500>
+    - <img src="images/56.png" width=500>
+
+### Deletion in AVL Tree
+- We need rebalancing if needed after deletion: **L rotation** & **R rotation**
+- R rotations
+    - R0 -> LL Case
+    - R1 -> LL case
+    - R-1 -> LR case
+- L rotations
+    - L0 -> RR Case
+    - L1 -> RL Case
+    - L-1 -> RR Case
+- Example R0:<br><img src="images/57.png" width=500>
+- Example R1:<br><img src="images/58.png" width=500>
+- Example R-1:<br><img src="images/59.png" width=500>
