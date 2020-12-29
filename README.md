@@ -55,6 +55,7 @@ By Rustam Zokirov | Fall semester 2020
     - [Threaded Binary Tree One-Way](#Threaded-Binary-Tree-One-Way)
     - [Threaded Binary Tree Two-Way](#Threaded-Binary-Tree-Two-Way)
     - [Inserting Node in TBT](#Inserting-Node-in-TBT)
+- [AVL Trees](#AVL-Trees)
 
 ## Introduction to Data Strutures
 ### Introduction
@@ -1112,3 +1113,7 @@ a thread will appear in the **right field** of a node and will point to the next
 ### Inserting Node in TBT
 - Inserting in the right side <br><img src="images/43.png" width=500>
 - Inserting in the left side <br><img src="images/44.png" width=500>
+
+## AVL Trees
+- Adelson-Velsky-Landis
+- Self-balancing BST
