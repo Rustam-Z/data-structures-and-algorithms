@@ -51,7 +51,7 @@ By Rustam Zokirov | Fall semester 2020
     - [Breadth First Search Traversal](#Breadth-First-Search-Traversal)
     - [Depth First Search](#Depth-First-Search)
 - [Threaded Binary Tree](#Threaded-Binary-Tree)
-    - [Inorder Traversal: TBT](#Inorder-Traversal:-TBT)
+    - [Inorder Traversal in TBT](#Inorder-Traversal-in-TBT)
     - [Threaded Binary Tree One-Way](#Threaded-Binary-Tree-One-Way)
     - [Threaded Binary Tree Two-Way](#Threaded-Binary-Tree-Two-Way)
     - [Inserting Node in TBT](#Inserting-Node-in-TBT)
@@ -1084,7 +1084,7 @@ void insertNode(int item,int pos) {
 - The maximum number of nodes with height `h` of a binary tree is 2<sup>h+1</sup>-1
 - `n0` is the number of leaf nodes and `n2` the number of nodes of degree 2, then `n0=n2+1`
 
-### Inorder Traversal: TBT
+### Inorder Traversal in TBT
 - `A / B * C * D + E`
 <br><img src="images/37.png" width=200>  <img src="images/38.png" width=350>
 - `n`: number of nodes
