@@ -4,10 +4,10 @@ Lecture notes on Data Structures `SOC-2010`
 By Rustam Zokirov | Fall semester 2020
 
 ## Extra:
-- Data Structures by Google Software Engineer, [link](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
-- [Dr. Ashish's Full Course](https://www.youtube.com/playlist?list=PLZwOihXJlZKl6AUgLP2dtc0DyM3bgFCvD)
+- [Data Structures by Google Software Engineer](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
+- [WilliamFiset](https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw)
 
-## Content:
+## Contents:
 - [Introduction to Data Strutures](#introduction-to-data-strutures)
     - [Introduction](#introduction)
     - [Abstract Data Type](#abstract-data-type)
@@ -49,6 +49,12 @@ By Rustam Zokirov | Fall semester 2020
     - [Deletion Operation in Binary Search Tree](#Deletion-Operation-in-Binary-Search-Tree)
 - [Graphs](#Graphs)
     - [Breadth First Search Traversal](#Breadth-First-Search-Traversal)
+    - [Depth First Search](#Depth-First-Search)
+- [Threaded Binary Tree](#Threaded-Binary-Tree)
+    - [Inorder Traversal: TBT](#Inorder-Traversal:-TBT)
+    - [Threaded Binary Tree One-Way](#Threaded-Binary-Tree-One-Way)
+    - [Threaded Binary Tree Two-Way](#Threaded-Binary-Tree-Two-Way)
+    - [Inserting Node in TBT](#Inserting-Node-in-TBT)
 
 ## Introduction to Data Strutures
 ### Introduction
@@ -647,16 +653,16 @@ void insertNode(int item,int pos) {
     +	    (+	        AB*
     (	    (+(	        AB*
     C	    (+(	        AB*C
-    /	    (+(/	AB*C
-    D	    (+(/	AB*CD
+    /	    (+(/	    AB*C
+    D	    (+(/	    AB*CD
     )	    (+	        AB*CD/
     -	    (-	        AB*CD/+
-    (	    (-( 	AB*CD/+
-    D	    (-( 	AB*CD/+D
-    +	    (-(+	AB*CD/+D
-    E	    (-(+	AB*CD/+DE
+    (	    (-( 	    AB*CD/+
+    D	    (-( 	    AB*CD/+D
+    +	    (-(+	    AB*CD/+D
+    E	    (-(+	    AB*CD/+DE
     )	    (-	        AB*CD/+DE+
-    )		        AB*CD/+DE+-
+    )		            AB*CD/+DE+-
     ```
 
 ### Evaluation of Postfix expression
@@ -706,9 +712,9 @@ void insertNode(int item,int pos) {
     4	    )+	        2 9 / 4
     -	    )+-	        2 9 / 4
     3	    )+-	        2 9 / 4 3
-    *	    )+-* 	2 9 / 4 3
-    7	    )+-*	2 9 / 4 3 7
-    /	    )+-*/	2 9 / 4 3 7
+    *	    )+-* 	    2 9 / 4 3
+    7	    )+-*	    2 9 / 4 3 7
+    /	    )+-*/	    2 9 / 4 3 7
     14	    )+-*/       2 9 / 4 3 7 14
     (                   2 9 / 4 3 7 14 / * - +
 
@@ -734,8 +740,8 @@ void insertNode(int item,int pos) {
     4	    (+	        2 9 / 4
     -	    (+-	        2 9 / 4
     3	    (+-	        2 9 / 4 3
-    *	    (+-* 	2 9 / 4 3
-    7	    (+-*	2 9 / 4 3 7
+    *	    (+-* 	    2 9 / 4 3
+    7	    (+-*	    2 9 / 4 3 7
     /	    (+-*/       2 9 / 4 3 7
     14	    (+-*/       2 9 / 4 3 7 14
     )                   2 9 / 4 3 7 14 / * - +
@@ -786,7 +792,7 @@ void insertNode(int item,int pos) {
     - **ENQUEUE**
         ```
         Step 1: IF REAR = MAX-1 
-                    Write OVERFLOW
+                    Write "OVERFLOW"
                     Goto step 4
                 [END OF IF]
         Step 2: IF FRONT = -1 and REAR = -1
@@ -800,7 +806,7 @@ void insertNode(int item,int pos) {
     - **DEQUEUE**
         ```
         Step 1: IF FRONT = -1 OR FRONT > REAR
-                    Write UNDERFLOW
+                    Write "UNDERFLOW"
                 ELSE
                     SET VAL = QUEUE[FRONT]
                     SET FRONT = FRONT + 1  
@@ -1019,14 +1025,10 @@ void insertNode(int item,int pos) {
     <br><img src="images/19.png" width=300>
 
 ### Deletion Operation in Binary Search Tree
-- Deleting a `Node` that has no children, `delete 78`
-    <img src="images/22.png" width=400>
-- Deleting a `Node` with One Child, `delete 54`
-    <img src="images/23.png" width=400>
-- Deleting a `Node` with Two Children, `delete 56`
-    <img src="images/24.png" width=400>
-- Main Algorithm
-    <br><img src="images/25.png" width=400>
+- Deleting a `Node` that has no children, `delete 78` <br><img src="images/22.png" width=400>
+- Deleting a `Node` with One Child, `delete 54`<br><img src="images/23.png" width=400>
+- Deleting a `Node` with Two Children, `delete 56`<br><img src="images/24.png" width=400>
+- Main algorithm: <br><img src="images/25.png" width=400>
 
 ## Graphs
 - **Vertices** (nodes), **edges** (lines between vertices), undericted graph, directed graph
@@ -1064,9 +1066,49 @@ void insertNode(int item,int pos) {
 - https://youtu.be/oDqjPvD54Ss
 - Breadth-first search. Complexity = `O(vertices + edges)`, finding the shortest path on unweighted graphs.
 - BFS starts at some arbitrary node of a graph and explores the neighbour nodes first, before moving to the next level neighbours.
+- <img src="images/35.png" width=300>
 
 ### Depth First Search
 - https://youtu.be/7fujbpJ0LB4
 - Complexity = `O(vertices + edges)`
 - Make sure you don't re-visit visited nodes! Continue on the previous node!
 - Backtrack when a dead end is reched! Means don't take the node which has no other neighbours.
+- <img src="images/36.png" width=400>
+- Choose any arbitrary node and PUSH (STATUS 2) it into stack. Then only we will POP. When you POP (STATUS 3) and PUSH neighbours.
+
+## Threaded Binary Tree
+- According to this idea we are going to replace all the null pointers by the appropriate pointer values called threads.
+- The maximum number of nodes with height `h` of a binary tree is 2<sup>h+1</sup>-1
+- `n0` is the number of leaf nodes and `n2` the number of nodes of degree 2, then `n0=n2+1`
+
+### Inorder Traversal: TBT
+- `A / B * C * D + E`
+<br><img src="images/37.png" width=200>  <img src="images/38.png" width=350>
+- `n`: number of nodes
+- number of non-null links: `n-1`
+- total links: `2n`
+- null links: 2n-(n-1)=`n+1`
+- Replace these null pointers with some useful “threads”.
+- A one-way threading and a two-way threading exist.
+
+### Threaded Binary Tree One-Way
+- In the one way threading of T, 
+a thread will appear in the **right field** of a node and will point to the next node in the in-order traversal of T.
+- <img src="images/39.png" width=260>
+
+### Threaded Binary Tree Two-Way 
+- If `ptr->left_child` is `null`, replace it with a pointer to the node that would be *visited before ptr* in an inorder traversal (**inorder predeccessor**)
+- If `ptr->right_child` is `null`, replace it with a pointer to the node that would be *visited after ptr* in an inorder traversal (**inorder successor**)
+- <img src="images/41.png" width=300>
+- ```cpp
+  class Node {
+    int data;
+    Node *left_child, *right_child;
+    boolean leftThread, rightThread;
+  }
+  ```
+- <img src="images/42.png" width=500>
+
+### Inserting Node in TBT
+- Inserting in the right side <br><img src="images/43.png" width=500>
+- Inserting in the left side <br><img src="images/44.png" width=500>
