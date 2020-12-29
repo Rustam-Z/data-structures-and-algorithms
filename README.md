@@ -1058,3 +1058,15 @@ void insertNode(int item,int pos) {
     - <img src="images/34.png" width=400>
 
 ### Breadth First Search Traversal
+- There are two standard methods of graph traversal: 
+    1. Breadth-first search (uses queue)
+    2. Depth-first search (uses stack)
+- https://youtu.be/oDqjPvD54Ss
+- Breadth-first search. Complexity = `O(vertices + edges)`, finding the shortest path on unweighted graphs.
+- BFS starts at some arbitrary node of a graph and explores the neighbour nodes first, before moving to the next level neighbours.
+
+### Depth First Search
+- https://youtu.be/7fujbpJ0LB4
+- Complexity = `O(vertices + edges)`
+- Make sure you don't re-visit visited nodes! Continue on the previous node!
+- Backtrack when a dead end is reched! Means don't take the node which has no other neighbours.
