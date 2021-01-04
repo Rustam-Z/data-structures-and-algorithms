@@ -58,6 +58,7 @@ By Rustam Zokirov | Fall semester 2020
 - [AVL Trees](#AVL-Trees)
     - [Insertion in AVL Tree](#Insertion-in-AVL-Tree)
     - [Deletion in AVL Tree](#Deletion-in-AVL-Tree)
+- [Huffman Encoding](#Huffman-Encoding)
 
 ## Introduction to Data Strutures
 ### Introduction
@@ -1149,3 +1150,24 @@ a thread will appear in the **right field** of a node and will point to the next
 - Example R0:<br><img src="images/57.png" width=500>
 - Example R1:<br><img src="images/58.png" width=500>
 - Example R-1:<br><img src="images/59.png" width=500>
+
+## Huffman Encoding
+- Fixed-Length encoding 
+- Variable-Length encoding 
+- **Prefix rule** - used to prevent ambiguities during decoding which states that no binary code should be a prefix of another code.
+    - ```
+      Bad       Good
+      a 0       a 0
+      b 011     b 11     
+      c 111     c 101
+      d 11      d 100
+      ```
+- **Algorithm for creating the Huffman Tree**: 
+    - Step 1- Create a leaf node for each character and build a min heap using all the nodes (The frequency value is used to compare two nodes in min heap)
+    - Step 2- Repeat Steps 3 to 5 while heap has more than one node
+    - Step 3- Extract two nodes, say x and y, with minimum frequency from the heap
+    - Step 4- Create a new internal node z with x as its left child and y as its right child. Also f`requency(z)= frequency(x)+frequency(y)`
+    - Step 5- Add z to min heap
+    - Step 6- Last node in the heap is the root of Huffman tree
+
+- <img src="images/60.png" width=500>
