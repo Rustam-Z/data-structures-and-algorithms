@@ -1,8 +1,7 @@
 # DS Student Practice Project
-@Alimov-8 & @Rustam-Z
+**@Alimov-8** & **@Rustam-Z**
 
 Covid-Free Transport Place Allocation ✈️🚉
-
 Using Linked List and Stacks (C++, binary files and other features)
 
 ### Description: 
