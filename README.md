@@ -59,6 +59,8 @@ By Rustam Zokirov | Fall semester 2020
     - [Insertion in AVL Tree](#Insertion-in-AVL-Tree)
     - [Deletion in AVL Tree](#Deletion-in-AVL-Tree)
 - [Huffman Encoding](#Huffman-Encoding)
+- [M-way trees](#M-way-trees)
+- [B-Trees](#B-Trees)
 
 ## Introduction to Data Strutures
 ### Introduction
@@ -1171,3 +1173,24 @@ a thread will appear in the **right field** of a node and will point to the next
     - Step 6- Last node in the heap is the root of Huffman tree
 
 - <img src="images/60.png" width=500>
+
+## M-way trees
+- http://faculty.cs.niu.edu/~freedman/340/340notes/340multi.htm
+- Binary search tree is the binary tree.
+- Each node has `m` children and `m-1` key fields. The keys in each node are in ascending order.
+- A binary search tree has *one value* in each node and *two subtrees*. This notion easily generalizes to an **M-way search tree**, which has `(M-1)` values per node and `M` subtrees. 
+- M is called the **degree** of the tree. A binary search tree, therefore, has degree 2. 
+- M is thus a *fixed upper limit* on how much data can be stored in a node. 
+
+## B-Trees
+- http://faculty.cs.niu.edu/~freedman/340/340notes/340multi.htm
+- Every node in a B-Tree contains at most m children. (other nodes beside root & leaf must have at least m/2 children)
+- All leaf nodes must be at the same level.
+- **Inserting**
+    - Find the appropriate leaf node
+    - If the leaf node contain less than m-1 keys then insert the element in the increasing order.
+    - Else if the leaf contains m-1:
+        - Insert the new element in the increasing order of elements.
+        - Split the node into the two nodes at the median.
+        - Push the median element upto its parent node.
+        - If the parent node also contain m-1 number of keys, then split it too by following the same steps.
