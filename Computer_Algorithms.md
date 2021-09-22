@@ -3,10 +3,10 @@
 By Rustam Zokirov • September 19, 2021
 
 ## Contents
-- [Introduction](#Introduction)
-- [Data Abstraction](#Data-Abstraction)
-- [Asymptotic Notations](#Asymptotic-Notations)
-    - [Practice](#Practice)
+- [Introduction](#introduction)
+- [Data Abstraction](#data-abstraction)
+- [Asymptotic Notations](#asymptotic-notations)
+    - [Practice](#practice)
 
 ## Introduction
 - A **computer algorithm** is 
@@ -63,3 +63,78 @@ By Rustam Zokirov • September 19, 2021
 - “Running time is O(f(n))” -> Worst case is O(f(n))
 - “Running time is Ω(f(n))” -> Best case is Ω(f(n))
 
+### Practice
+```
+Big O
+__________________________________________________________________
+a. f(n) = 5n^3 + n^2 + 6n + 2
+5n^3 + n^2 + 6n + 2 <= 5n^3 + n^2 + 6n + n      n >= 2
+                    <= 5n^3 + n^2 + 7n  
+                    <= 5n^3 + n^2 + n^2         n^2 >= 7n, n >= 7
+                    <= 5n^3 + 2n^2 
+                    <= 5n^3 + n^3               n^3 >= 2n^2, n >= 2
+                    <= 6n^3
+                    = O(n^3)
+                    [c=6, n>=7]
+
+b. f(n) = 6n^2 + 3n + 2^n
+2^n + 6n^2 + 3n <= 2^n + 6n^2 + n^2             n^2 >= 6n, n >= 6
+                <= 2^n + 7n^2
+                <= 2^n + 2^n                    2^n >= n^2, n >= 4 
+                <= 2*2^n 
+                = O(2^n)
+                [c=2, n=6]
+
+Big Ω
+__________________________________________________________________
+a. 5n^3 + n^2 + 3n + 2
+5n^3+ n^2 + 3n + 2 >= 5n^3      n0 >= 1
+                    = Ω(n^3)
+                    [c=5, n0>=1]
+
+b. 4*2^n + 3n
+4*2^n + 3n >= 4*2^n     n0 >= 1
+            = Ω(2^n)
+            [c=4, n0 >= 1]
+
+Big Θ (average)
+__________________________________________________________________
+a. f(n) = 27*n^2 + 16n
+27*n^2+16n <= 27*n^2+n^2    n^2 >= 16n, n >= 16
+           <= 28*n^2
+            = O(n^2)
+            [c1=28, n0=16]
+
+27*n^2+16n >= 27*n^2        n0 >= 1
+            = Ω(n^2)
+            [c2=27, n0>=1]
+
+Overall, [c1=28, c2=27, n0>=16]
+
+b. f(n) = 3*2^n + 4n^2 + 5n + 2
+3*2^n+4n^2+5n+2 <= 3*2^n+4n^2+5n+n      n >= 2
+                <= 3*2^n+4n^2+6n
+                <= 3*2^n+4n^2+n^2       n^2 >= 6n, n >= 6
+                <= 3*2^n+5n^2
+                <= 3*2^n+2^n            2^n >= n^2, n >= 4
+                <= 4*2^n
+                = O(2^n)
+                [c1=4, n0>=6]
+
+3*2^n + 4n^2 + 5n + 2 >= 3*2^n      n0 >= 1
+                      = Ω(2^n)
+                      [c2=3, n0>=1]
+
+Overall, [c1=4, c2=3, n0>=6]
+
+Extra 
+__________________________________________________________________
+f(n) = 5n^3 + 2 and g(n)= n^2
+
+a. g(n) = o f(n)
+n^2 = o(5n^3 + 2)
+n^2 = o(n^3) TRUE
+
+b. f(n) = O g(n)
+5n^3 + 2 = O(n^2) FALSE, it should be at least O(n^3), O(n^4)
+```

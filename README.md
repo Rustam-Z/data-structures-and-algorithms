@@ -3,7 +3,7 @@ Lecture notes on Data Structures `SOC-2010` and Computer Algorithms `SOC-3030`
 
 By Rustam Zokirov • Fall Semester 2020 & Fall Semester 2021
 
-## Notes on [Computer Algorithms](Computer_Algorithms.md)
+### !!! Check out notes on [Computer Algorithms](Computer_Algorithms.md)
 
 ## Extra:
 - [Data Structures by Google Software Engineer](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
