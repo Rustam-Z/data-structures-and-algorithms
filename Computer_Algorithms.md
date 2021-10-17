@@ -1,12 +1,20 @@
 # Computer Algorithms
 
-By Rustam Zokirov • September 19, 2021
+Rustam Zokirov • Sep 19, 2021
 
-## Contents
+## Table of contents
 - [Introduction](#introduction)
 - [Data Abstraction](#data-abstraction)
 - [Asymptotic Notations](#asymptotic-notations)
-    - [Practice](#practice)
+    - [Practice 1](#practice-1)
+- [Analyzing Recurrences](#analyzing-recurrences) - running time of **recursive program** code
+- [Master's Theorem](#masters-theorem)
+- Insertion sort
+- Merge sort
+- Quick sort
+- Heap sort
+- Radix sort
+- RedBlack Tree
 
 ## Introduction
 - A **computer algorithm** is 
@@ -63,7 +71,7 @@ By Rustam Zokirov • September 19, 2021
 - “Running time is O(f(n))” -> Worst case is O(f(n))
 - “Running time is Ω(f(n))” -> Best case is Ω(f(n))
 
-### Practice
+### Practice 1
 ```
 Big O
 __________________________________________________________________
@@ -138,3 +146,82 @@ n^2 = o(n^3) TRUE
 b. f(n) = O g(n)
 5n^3 + 2 = O(n^2) FALSE, it should be at least O(n^3), O(n^4)
 ```
+
+## Analyzing Recurrences
+- Back substitution
+- Recursive tree method
+- Master's theorem
+
+```
+// T(n) = n + T(n-1) => O(n^2) 
+demo(int n){ 
+    if(n>0){
+        for(i=1; i<=n; i++) // this 
+            print (“message”);
+        demo(n-1);          // and this
+    }
+    else
+    return 1;
+}
+
+// T(n) = logn + T(n-1)	=> 0(nlogn)
+demo(int n){ 
+ if(n>0){
+      for(i=1; i<=n; i=i*2) // logn because of i*2
+          print (“message”);
+      demo(n-1);            // and this
+   }
+else
+return 1;
+}
+
+// T(n) = 2T(n-1) + c => 0(2^n)
+demo(int n){ 
+ if(n>0){
+      print (“message”); // we don't have for loop
+      demo(n-1); // 2T(n-1) comes from two recursive funcs
+      demo(n-1);
+   }
+else
+return 1;
+}
+
+// T(n) = T(n/2) + c => 0(logn)
+demo(int n){ 
+ if(n>1){
+      print (“message”);
+      demo(n/2);
+     }
+else
+return 1;
+}
+
+// O(n) because [n + T(n/2) = n]
+demo(int n){ 
+ if(n>1){
+	for(i=1; i<=n; i=i+1)    
+	print (“message”);
+      	demo(n/2);
+    }
+else
+return 1;
+}
+// 2T(n/2)+n which is nlogn, when there are 2 times demo(n/2)
+
+
+T(n) = c + T(n-1)		=> 0(n)
+	 = 1 + T(n-1)		=> 0(n)
+	 = n + T(n-1)		=> 0(n^2)
+	 = n^2 + T(n-1)	    => 0(n^3)
+	 = logn + T(n-1)	=> 0(nlogn)
+
+T(n) = 2T(n-1) + c	    => 0(2^n)
+	 = 3T(n-1) + 1	    => 0(3^n)
+	 = 2T(n-1) + n	    => 0(n2^n)
+	 = 2T(n-1) + logn	=> 0(logn * 2^n)
+```
+
+## Master's Theorem
+<img src="images/CA/masters_decr.png" width=500>
+<img src="images/CA/masters_div.png" width=500>
+
