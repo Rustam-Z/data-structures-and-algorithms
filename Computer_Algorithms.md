@@ -221,6 +221,14 @@ T(n) = 2T(n-1) + c	    => 0(2^n)
 	 = 2T(n-1) + logn	=> 0(logn * 2^n)
 ```
 
+- Back substitution <br>
+<img src="images/CA/back.jpg" width=500>
+- Recursive tree method <br>
+<img src="images/CA/tree.jpg" width=500>
+- Master's Theorem <br>
+<img src="images/CA/masters.jpg" width=500>
+
+
 ## Master's Theorem
 <img src="images/CA/masters_decr.png" width=500>
 <img src="images/CA/masters_div.png" width=500>
