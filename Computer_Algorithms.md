@@ -11,10 +11,11 @@ Rustam Zokirov • Sep 19, 2021
 - [Master's Theorem](#masters-theorem)
 - Insertion sort
 - Merge sort
-- Heap sort
-- Quick sort
-- Radix sort
-- RedBlack Tree
+- [Heap sort](#heap-sort)
+- [Quick sort](#quick-sort)
+- [Radix sort](#radix-sort)
+- Bucket sort
+- [RedBlack Tree](#redblack-tree)
 
 ## Introduction
 - A **computer algorithm** is 
@@ -238,6 +239,27 @@ T(n) = 2T(n-1) + c	    => 0(2^n)
 - `build_max_heap()` - build max heap from unsorted array
 - `max_heapify()`
 - `extract_max_heap()`
+- How to do: take the max number put it about, then do heapify for 
+
+## Quick sort
+<img src="images/CA/quick.png" width=500>
+
+## Radix sort
+https://www.youtube.com/watch?v=XiuSW_mEn7g
+
+How it works?
+
+We take the last digit of an element, then sort by it, then we move to another digit, and again sort by them.
+
+<img src="images/CA/radix.png" width=500>
+<img src="images/CA/radix2.png" width=500>
+
+## Bucket sort
+https://www.youtube.com/watch?v=NvZG0dZ60RQ
+
+We have an array, just put the same values into one bucket. Then place back again. Only in range of 0-999, and these values already created for us.
+
+
 
 ## RedBlack Tree
 - https://www.youtube.com/watch?v=A3JZinzkMpk&list=PL9xmBV_5YoZNqDI8qfOZgzbqahCUmUEin&index=4
