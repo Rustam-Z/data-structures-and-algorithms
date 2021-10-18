@@ -11,8 +11,8 @@ Rustam Zokirov • Sep 19, 2021
 - [Master's Theorem](#masters-theorem)
 - Insertion sort
 - Merge sort
-- Quick sort
 - Heap sort
+- Quick sort
 - Radix sort
 - RedBlack Tree
 
@@ -223,7 +223,7 @@ T(n) = 2T(n-1) + c	    => 0(2^n)
 
 - Back substitution <br>
 <img src="images/CA/back.jpg" width=500>
-- Recursive tree method <br>
+- Recursive tree method (use geometric progression sum formula a(1-r^n)/(1-r) ) <br>
 <img src="images/CA/tree.jpg" width=500>
 - Master's Theorem <br>
 <img src="images/CA/masters.jpg" width=500>
@@ -233,3 +233,18 @@ T(n) = 2T(n-1) + c	    => 0(2^n)
 <img src="images/CA/masters_decr.png" width=500>
 <img src="images/CA/masters_div.png" width=500>
 
+
+## Heap Sort
+- `build_max_heap()` - build max heap from unsorted array
+- `max_heapify()`
+- `extract_max_heap()`
+
+## RedBlack Tree
+- https://www.youtube.com/watch?v=A3JZinzkMpk&list=PL9xmBV_5YoZNqDI8qfOZgzbqahCUmUEin&index=4
+- Case 1: Z.uncle = red --> recolor(all)
+- Case 2: Z.uncle = black(triangle) --> rotate Z.parent # just put child(z) above its parent, this will bring case 3
+- Case 3: Z.uncle = black(line) --> rotate(Z.grandparent) # parent will be root, + recolor(parent, grandparent)
+- O(logn)
+
+### Complexity
+<img src="images/CA/sort_complexity.png" width=500>
