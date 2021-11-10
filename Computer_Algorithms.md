@@ -239,7 +239,7 @@ T(n) = 2T(n-1) + c	    => 0(2^n)
 - `build_max_heap()` - build max heap from unsorted array
 - `max_heapify()`
 - `extract_max_heap()`
-- How to do: take the max number put it about, then do heapify for 
+- How to do: take the max number put it about, then do heapify for both children. Take the root node, and swap with the rightmost leaf child. Then delete root node after swap which is now in the leaf. Then again apply heapify, and extract max heap for whole array.
 
 ## Quick sort
 <img src="images/CA/quick.png" width=500>
