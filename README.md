@@ -1,16 +1,18 @@
-# Data Structures and Computer Algorithms
+ # Data Structures and Computer Algorithms
 Lecture notes on Data Structures `SOC-2010` and Computer Algorithms `SOC-3030`
 
-By Rustam Zokirov • Fall Semester 2020 & Fall Semester 2021
+By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
-### !!! Check out notes on [Computer Algorithms](Computer_Algorithms.md)
+> *NOTES ON COMPUTER ALGORITHMS [HERE](Computer_Algorithms.md)*
 
-## Extra:
-- [Data Structures by Google Software Engineer](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
-- [WilliamFiset](https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw)
+## Learning roadmap
+- [ ] START HERE: [Naso Academy DS playlist](https://www.youtube.com/playlist?list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y)
+- [ ] ALGORITHMS VIDEO: [Jenny's DSA playlist](https://www.youtube.com/playlist?list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU)
+- [ ] READING: [programiz.com/dsa](https://www.programiz.com/dsa)
+- [ ] SHORT VIDEOS: [Data Structures by Google Software Engineer](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
 
-## Contents:
-- [Introduction to Data Strutures](#introduction-to-data-strutures)
+## Contents
+- [Introduction to Data Structures](#introduction-to-data-strutures)
     - [Introduction](#introduction)
     - [Abstract Data Type](#abstract-data-type)
     - [Asymptotic Notations (O, Ω, Θ)](#asymptotic-notations)
@@ -64,9 +66,10 @@ By Rustam Zokirov • Fall Semester 2020 & Fall Semester 2021
 - [M-way trees](#M-way-trees)
 - [B-Trees](#B-Trees)
 
-## Introduction to Data Strutures
+## Introduction to Data Structures
 ### Introduction
-- Data structure usually refers to an *data organization*, *management*, and *storage* in main memory that enables efficiently access and modification.
+- Data structure usually refers to a *data organization*, *management*, and *storage* in main memory that enables efficiently access and modification.
+- If **data** is arranged in a systematic way then it gets the structure and became meaningful. This meaningful and processed data is the **information**.
 - The **cost** of a solution is the amount of resources that the solution needs.
 - A data structure requires:
     - Space for each data item it stores
@@ -77,10 +80,14 @@ By Rustam Zokirov • Fall Semester 2020 & Fall Semester 2021
     - Analyze the problem
     - Quantify the resources
     - Select the data structure
-- <img src="images/01.png" width=500>
-- Operations on DS: 
+<figure>
+  <img src="images/01.png" width=500px>
+  <figcaption>Data structures hierarchy</figcaption>
+</figure>
+
+- Operations on data structures: 
     - Traversing, Searching, Inserting, Deleting, Sorting, Merging.
-- An algorithm must possess several properties:
+- **Algorithm** properties:
     - It must be correct (must produce desired output).
     - It is composed of a series of concrete steps.
     - There can be no ambiguity.
@@ -89,30 +96,54 @@ By Rustam Zokirov • Fall Semester 2020 & Fall Semester 2021
 - To summarize:
     - **Problem** - a function of inputs and mapping them to outputs.
     - **Algorithm** - a step-by-step set of operations to solve a specific problem or a set of problems.
-    - **Program** - a specific sequences of inctructions in a prog. lang., and it may contain the implementation of many algorithms.
+    - **Program** - a specific sequences of instructions in a prog. lang., and it may contain the implementation of many algorithms.
 
-### Abstract Data Type
-- https://youtu.be/n0e27Cpc88E
-- An ADT describes a set of objects sharing the same properties and behaviors.
+### Abstract data type
+- https://youtu.be/ZniDyolzrBw, https://youtu.be/n0e27Cpc88E
+- Two important things about data types:
+  - Defines a certain **domain** of values
+  - Defines **operations** allowed on those values
+  - Example: `int` takes
+    - Takes only integer values
+    - Operations: addition, subtraction, multiplication, division, bitwise operations.
+- ADT describes a set of objects sharing the same properties and behaviors.
     - The *properties* of an ADT are its data.
     - The *behaviors* of an ADT are its operations or functions.
-- Abstraction is the method of hiding the unwanted information.
-- Encapsulation is a method to hide the data in a single entity or unit along with a method to protect information from outside. Encapsulation can be implemented using by access modifier i.e. private, protected and public.
+- ADT example: stack (can be implemented with array or linked list)
+- **Abstraction** is the method of hiding the unwanted information.
+- **Encapsulation** is a method to hide the data in a single entity or unit along with a method to protect information from outside. Encapsulation can be implemented using by access modifier i.e. private, protected and public.
 
-### Asymptotic Notations
+### What is the data structure
+- A **data structure** is the organization of the data in a way so that it can be used efficiently.
+- It is used to implement an ADT.
+- ADT tells us *what* is to be done and data structures tells use *how* to do it.
+- Types:
+  - **linear** (stack, array, linked list)
+  - **non-linear** (tree, graph)
+  - **static** (compile time memory allocation), array
+    - Advantage: fast access
+    - Disadvantage: slow insertion and deletion
+  - **dynamic** (run time memory allocation), linked list
+    - Advantage: faster insertion and deletion
+    - Disadvantage: slow access
+    
+### Asymptotic notations
+- Efficiency measured in terms of **TIME** and **SPACE**. In terms of number of operations.
 - Asymptotic complexity 
-    - Running time of an algorithm as a function of input size `n` for large `n`
-    - "Functions do more work for more input"
-    - Drop all constants: `3n, 5n, 100n => n`
+    - The running time depends on the *size of the input* 
+    - `f(n)` = running time of an algorithm, where `n`= input size. We are interested in growth of `n` to calculate the `f(n)`
+    - "Functions do more work for bigger input"
+    - Drop all constants: `3n, 5n, 100n => n`, [why?](https://www.youtube.com/watch?v=MgyLGVUn8LQ)
     - Ignore lower order terms: n<sup>3</sup> + n<sup>2</sup> + n + 5 => n<sup>3</sup>
     - Ignore the base of logs: `log(2) => ln(2)`
-- f(n) = O(n<sup>2</sup>) => describes how f(n) grows in comparison to  n<sup>2</sup>
+- f(n) = O(n<sup>2</sup>) => describes how f(n) grows in comparison to n<sup>2</sup>
 - Big-O notation, Ω (Omega) notation, Θ (Big-Theta) notation
+- Big-O notation is used to measure the performance of any algorithm by providing the order of growth of the function.
 - <img src="images/03.png" width=400>
 - <a href="https://youtu.be/vsgrJrphEHo"><img src="images/04.png" width=600></a>
 - <img src="images/05.png" width=600>
 - **O (Big-O) notation** (worst time, upper bound, maximum complexity)
-    - `0 <= f(n) <= c*g(n) for all n >= n0`
+    - `0 <= f(n) <= c*g(n) for all n >= n0`, `f(n) = O(g(n))`
     
     ```
     f(n) = 3n + 2, g(n) = n, f(n) = Og(n)
@@ -153,6 +184,10 @@ By Rustam Zokirov • Fall Semester 2020 & Fall Semester 2021
     c2 = 4, n >= 2            c1 = 1, n >= 1
     n >=2 // We must take greater number, which is true for both
     ```
+- [Loops, if-else asymptotic analysis](https://www.youtube.com/watch?v=BpiMRyWoDu0)
+<img src="images/time_complexity1.png" width=500><br>
+<img src="images/time_complexity2.png" width=500>
+
 
 ## Searching Techniques
 - **Searching** is an operation which finds the location of a given element in a list.
@@ -164,69 +199,46 @@ By Rustam Zokirov • Fall Semester 2020 & Fall Semester 2021
 <br><img src="images/06.gif" width=400>
 - Pseudocode:
     ```
-    procedure linear_search (list, value)
-
+    procedure linear_search(list, value)
         for each item in the list
-            if match item == value
+            if item == value
                 return the item's location
             end if
         end for
-
     end procedure
     ```
-- <a href="codes/01_linear_search.cpp">Linear search in C++</a> | <a href="codes/01_linear_search.py">Linear search in Python</a>
-    ```python
-    # If x is present then return its location,
-    # otherwise return -1
-
-    def search(arr, n, x):
-
-        for i in range(0, n):
-            if (arr[i] == x):
-                return i
-        return -1
-
-    # Driver Code
-    arr = [2, 3, 4, 10, 40]
-    x = 10
-    n = len(arr)
-
-    # Function call
-    result = search(arr, n, x)
-    if(result == -1):
-        print("Element is not present in array")
-    else:
-        print("Element is present at index", result)
-    ```
+- <a href="code/01_linear_search.cpp">Linear search in C++</a> | <a href="code/01_linear_search.py">Linear search in Python</a>
 - Analysis:
     - Best case `O(1)`
     - Average `O(n)`
     - Worst `O(n)`
 
 ### Binary Search
-- Binary search method is very fast and efficient. Array must be sorted! 
+- Binary Search is a searching algorithm for finding an element's position in a **sorted array**.
+- It's fast and efficient, tIme complexity of binary search: `O(log n)`
 - In this method:
     - To search an element we compare it with the element present at the center of the list. If it matches then the search is successful.
-    - Otherwise , the list is divided into two halves:
+    - Otherwise, the list is divided into two halves:
         - One from 0th element to the center element (first half)
         - Another from center element to the last element (second half)
     - The searching will now proceed in either of the two halves depending upon whether the element is greater or smaller than the center element.
     - If the element is smaller than the center element then the searching will be done in the first half, otherwise in the second half.
+- It can be done recursively or iteratively.
 - Pseudocode:
     ```
-    Procedure binary_search
+    procedure binary_search
         A ← sorted array
         n ← size of array
         x ← value to be searched
 
-        Set lowerBound = 1
-        Set upperBound = n 
+        set lowerBound = 1
+        set upperBound = n 
 
         while x not found
             if upperBound < lowerBound 
                 EXIT: x does not exists.
         
-            set midPoint = lowerBound + ( upperBound - lowerBound ) / 2
+            set midPoint = lowerBound + (upperBound - lowerBound) / 2
             
             if A[midPoint] < x
                 set lowerBound = midPoint + 1
@@ -240,24 +252,46 @@ By Rustam Zokirov • Fall Semester 2020 & Fall Semester 2021
     
     end procedure
     ```
-- <a href="codes/02_binary_search.cpp">Binary search in C++</a> | <a href="codes/02_binary_search.py">Recursive binary search in Python</a> | <a href="codes/02_binary_search_iter.py">Iterative binary search in Python</a>
-    ```python
-    # Binary search in Python
-    ```
+- <a href="codes/02_binary_search.cpp">Binary search in C++</a> | <a href="codes/02_binary_search.py">Binary search in Python</a> 
 - Analysis:
     - Best-case `O(1)` 
     - Average `O(log n)` 
     - Worst-case `O(log n)`
 
 
-## Sorting Techniques
-- Selection sort, bubble sort, insertion sort, quick sort, merge sort
+## Sorting techniques
 - **Sorting** - a process of arranging a set of data in certain order
-- *Internal sorting* - deals with data in memory of computer
-- *External sorting* - deals with data stored in data files when data is large
-- Selection Sort - O(n<sup>2</sup>)
-- Bubble Sort - best O(n) else O(n<sup>2</sup>)
-- Insrtion sort - worst O(n<sup>2</sup>), best O(n)
+- **Internal sorting** - deals with data in memory of computer
+- **External sorting** - deals with data stored in data files when data is in large volume
+- Types of sorts:
+  - [Bubble sort](https://www.programiz.com/dsa/bubble-sort) - best O(n) else O(n<sup>2</sup>). Compares adjacent elements and bring small in front using swap. [Python code](code/bubble_sort.py)
+  - [Selection sort](https://www.programiz.com/dsa/selection-sort) - O(n<sup>2</sup>). Selects the smallest element from an unsorted list and places that element in front. [Python code](code/selection_sort.py)
+  - **[Insertion sort](https://www.programiz.com/dsa/insertion-sort) - best O(n) else O(n<sup>2</sup>). Places unsorted element at its suitable place in each iteration. [Python code](code/insertion_sort.py)
+  - **[Merge sort](https://www.programiz.com/dsa/merge-sort) - O(n\*logn. It is based on *Divide and Conquer Algorithm* divides in the middle, sort, then combine.
+  - [Quick sort](https://www.programiz.com/dsa/quick-sort) - worst O(n<sup>2</sup>) else O(n\*logn). Based on *Divide and Conquer Algorithm* uses pivot element, > and < elements are placed before and after pivot.
+  - Heap sort
+  - Radix sort
+  - Bucket sort
+
+### [Merge sort](https://www.programiz.com/dsa/merge-sort) 
+- [Python code](code/merge_sort.py)
+- Problem is divided into two sub-problems. Each problem is solved individually. Finally, sub-problems are combined to final solution.
+- Divide: we split `A[p..r]` into two arrays `A[p..q]` and `A[q+1, r]`
+- Conquer: we sort both sub-arrays `A[p..q]` and `A[q+1, r]`, so this part is recursive. We use merge sort to sort both sub-arrays.
+- Combine: we combine the results by creating a sorted array `A[p..r]` from two sorted sub-arrays `A[p..q]` and `A[q+1, r]`
+<br><img src="images/merge_sort.png" width="500">
+- How do we merge (combine)? We need to two pointers i, j to track current position in sub-arrays. Basically, we are placing the mim value to final array.
+<br><img src="images/merge_step.png" width="500">
+
+### [Quick sort](https://www.programiz.com/dsa/quick-sort) 
+- [Python code](code/quick_sort.py)
+- Based on divide and conquer approach.
+- Algorithm:
+  - An array is divided into sub-arrays by selecting a **pivot element** (element selected from the array).
+  - While dividing the array, the pivot element should be positioned in such a way that elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.
+  - The left and right sub-arrays are also divided using the same approach. This process continues until each subarray contains a single element.
+  - At this point, elements are already sorted. Finally, elements are combined to form a sorted array
+- Different variants to choose the pivot
 
 ## Linked List
 - Array Limitations:
