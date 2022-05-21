@@ -1036,8 +1036,8 @@ void insertNode(int item,int pos) {
         ```
 - **POSTORDER TRAVERSAL** (LRN)
     1. Traversing the left sub-tree,
-    2. Traversing the right sub-tree, and finally
-    3. Visiting the root node.
+    2. Visiting the root node, and finally
+    3. Traversing the right sub-tree.
 
         ```
         Example outputs with postorder:
@@ -1046,8 +1046,9 @@ void insertNode(int item,int pos) {
         ```
 - **INORDER TRAVERSAL** (LNR)
     1. Traversing the left sub-tree,
-    2. Visiting the root node, and finally
-    3. Traversing the right sub-tree.
+    2. Traversing the right sub-tree, and finally
+    3. Visiting the root node.
+
         ```
         Example outputs with inorder:
         (a) G, D, H, L, B, E, A, C, I, F, K, J
