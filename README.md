@@ -185,6 +185,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     n >=2 // We must take greater number, which is true for both
     ```
 - [Loops, if-else asymptotic analysis](https://www.youtube.com/watch?v=BpiMRyWoDu0)
+
 <br><img src="images/time_complexity1.png" width=500><br>
 <img src="images/time_complexity2.png" width=500>
 
