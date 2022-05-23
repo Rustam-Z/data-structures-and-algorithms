@@ -144,9 +144,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - <img src="images/03.png" width=400>
 - <a href="https://youtu.be/vsgrJrphEHo"><img src="images/04.png" width=600></a>
 - <img src="images/05.png" width=600>
-- **O (Big-O) notation** (worst time, upper bound, maximum complexity)
-    - `0 <= f(n) <= c*g(n) for all n >= n0`, `f(n) = O(g(n))`
-    
+- **O (Big-O) notation** (worst time, upper bound, maximum complexity), `0 <= f(n) <= c*g(n) for all n >= n0`, `f(n) = O(g(n))`
     ```
     f(n) = 3n + 2, g(n) = n, f(n) = Og(n)
 
@@ -156,11 +154,9 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
     c = 4, n >= 2
     ```
-    - n<sup>3</sup> = O(n<sup>2</sup>) False
-    - n<sup>2</sup> = O(n<sup>3</sup>) True
-- **Ω (Omega) notation**  (best amount of time, lower bound) 
-    - `0 <= c*g(n) <= f(n) for all n >=n0`
-    
+   - n<sup>3</sup> = O(n<sup>2</sup>) False
+   - n<sup>2</sup> = O(n<sup>3</sup>) True
+- **Ω (Omega) notation**  (best amount of time, lower bound), `0 <= c*g(n) <= f(n) for all n >=n0`
      ```
     f(n) = 3n + 2, g(n) = n, f(n) = Ωg(n)
 
@@ -171,9 +167,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
     c = 1, n >= 1
     ```
-- **Θ (Big-theta) notation** (average case, lower & upper sandwich)
-    - `0 <= c1*g(n) <= f(n) <= c2*g(n)`
-    
+- **Θ (Big-theta) notation** (average case, lower & upper sandwich), `0 <= c1*g(n) <= f(n) <= c2*g(n)`
     ```
     f(n) = 3n + 2, g(n) = n, f(n) = Θg(n)
 
@@ -188,8 +182,8 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     ```
 - [Loops, if-else asymptotic analysis](https://www.youtube.com/watch?v=BpiMRyWoDu0)
 
-<br><img src="images/time_complexity1.png" width=500><br>
-<img src="images/time_complexity2.png" width=500>
+    <img src="images/time_complexity1.png" width=500>
+    <img src="images/time_complexity2.png" width=500>
 
 
 ## Searching Techniques
