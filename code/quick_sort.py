@@ -25,10 +25,10 @@ def partition(array, low, high):
             i = i + 1
 
             # swapping element at i with element at j
-            (array[i], array[j]) = (array[j], array[i])
+            array[i], array[j] = array[j], array[i]
 
     # swap the pivot element with the greater element specified by i
-    (array[i + 1], array[high]) = (array[high], array[i + 1])
+    array[i + 1], array[high] = array[high], array[i + 1]
 
     # return the position from where partition is done
     return i + 1
@@ -50,6 +50,6 @@ def quick_sort(array, low, high):
 
 
 if __name__ == '__main__':
-    unsorted_array = [10, 7, 8, 9, 1, 5]
+    unsorted_array = [-5, 10, 7, 8, 9, 1, 5, -2]
     quick_sort(unsorted_array, 0, len(unsorted_array) - 1)
     print(unsorted_array)

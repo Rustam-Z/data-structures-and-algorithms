@@ -3,7 +3,7 @@ Lecture notes on Data Structures `SOC-2010` and Computer Algorithms `SOC-3030`
 
 By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
-> *NOTES ON COMPUTER ALGORITHMS [HERE](Computer_Algorithms.md)*
+> *NOTES ON COMPUTER ALGORITHMS - [HERE](Computer_Algorithms.md)*
 
 ## Learning roadmap
 - [ ] START HERE: [Naso Academy DS playlist](https://www.youtube.com/playlist?list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y)
@@ -12,7 +12,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - [ ] SHORT VIDEOS: [Data Structures by Google Software Engineer](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
 
 ## Contents
-- [Introduction to Data Structures](#introduction-to-data-strutures)
+- [Introduction to Data Structures](#introduction-to-data-structures)
     - [Introduction](#introduction)
     - [Abstract Data Type](#abstract-data-type)
     - [Asymptotic Notations (O, Ω, Θ)](#asymptotic-notations)
@@ -20,6 +20,8 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     - [Linear Search](#linear-search)
     - [Binary Search](#binary-search)
 - [Sorting techniques](#sorting-techniques)
+  - [Merge sort](#merge-sort)
+  - [Quick sort](#quick-sort)
 - [Linked list](#linked-list)
     - [Insertion at beginning](#insertion-at-beginning-in-linked-list)
     - [Insertion at the end](#insertion-at-the-end-in-linked-list)
@@ -292,8 +294,18 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
   - While dividing the array, the pivot element should be positioned in such a way that elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.
   - The left and right sub-arrays are also divided using the same approach. This process continues until each subarray contains a single element.
   - At this point, elements are already sorted. Finally, elements are combined to form a sorted array
-- Different variants to choose the pivot
+- Working with Quicksort algorithm:
+  1. Select the pivot element. We select the rightmost element of array as pivot element.
+  <br><img src="images/quicksort1.png" width=500>
+  2. Rearrange the array. We rearrange smaller and larger elements to right and left side of pivot. 
+  <br><img src="images/quicksort2.png" width=500>
+  3. How do we rearrange the array? 
+     1. We need PIVOT which is last element, "i" the first largest element from left side, and "j" which is the iterator (next element in array). 
+     2. We compare "j" with pivot. If "j" is smaller than pivot we swap "j" with "i", and make "++i".
+     3. If "j" reaches the pivot, we just swap pivot with "i".
+     4. Now we have two sub-arrays, we repeat the same algo.
 
+ 
 ## Linked List
 - Array Limitations:
     - Fixed size
