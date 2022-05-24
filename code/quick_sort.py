@@ -4,7 +4,7 @@ Time complexity:
     Best case: O(n log n)
     Average case: O(n log n)
     Worst case: O(n^2)
-Space complexity: O(log n)
+Space complexity: O(log n), because recursive stack can max uses half of array
 """
 
 
