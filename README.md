@@ -261,14 +261,15 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - **Internal sorting** - deals with data in memory of computer
 - **External sorting** - deals with data stored in data files when data is in large volume
 - Types of sorts:
-  - [Bubble sort](https://www.programiz.com/dsa/bubble-sort) - best O(n) else O(n<sup>2</sup>). Compares adjacent elements and bring small in front using swap. [Python code](code/bubble_sort.py)
   - [Selection sort](https://www.programiz.com/dsa/selection-sort) - O(n<sup>2</sup>). Selects the smallest element from an unsorted list and places that element in front. [Python code](code/selection_sort.py)
+  - [Bubble sort](https://www.programiz.com/dsa/bubble-sort) - best O(n) else O(n<sup>2</sup>). Compares adjacent elements, and swaps elements bringing large elements to the end. [Python code](code/bubble_sort.py)
   - **[Insertion sort](https://www.programiz.com/dsa/insertion-sort) - best O(n) else O(n<sup>2</sup>). Places unsorted element at its suitable place in each iteration. [Python code](code/insertion_sort.py)
-  - **[Merge sort](https://www.programiz.com/dsa/merge-sort) - O(n\*logn. It is based on *Divide and Conquer Algorithm* divides in the middle, sort, then combine.
-  - [Quick sort](https://www.programiz.com/dsa/quick-sort) - worst O(n<sup>2</sup>) else O(n\*logn). Based on *Divide and Conquer Algorithm* uses pivot element, > and < elements are placed before and after pivot.
-  - Heap sort
+  - **[Merge sort](https://www.programiz.com/dsa/merge-sort) - O(n\*logn). It is based on *Divide and Conquer Algorithm* divides in the middle, sorts, then combines.
+  - [Quick sort](https://www.programiz.com/dsa/quick-sort) - worst O(n<sup>2</sup>) else O(n\*logn). Based on *Divide and Conquer Algorithm*, larger and smaller elements are placed after and before pivot element.
+  - [Heap sort](https://www.programiz.com/dsa/heap-sort) - O(n\*logn).
   - Radix sort
   - Bucket sort
+- <img src="images/complexity.png" width="500">
 
 ### [Merge sort](https://www.programiz.com/dsa/merge-sort) 
 - [Python code](code/merge_sort.py)
@@ -299,7 +300,54 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
      3. If "j" reaches the pivot, we just swap pivot with "i".
      4. Now we have two sub-arrays, we repeat the same algo.
 
- 
+### [Heap sort](https://www.programiz.com/dsa/heap-sort)
+- [Python code](code/heap_sort.py)
+- Left child of element `i` is `2i + 1`, right child is `2i + 2`. Indexing starts from 0
+- Parent of element `i` can be found with `(i-1) / 2`
+- Heap data structure:
+    - It is a complete binary tree (nodes are formed from left to right)
+    - All nodes are greater than children (max-heap)
+    - <img src="images/max_heap.png" width="500">
+- To create a Max-Heap from a complete binary tree, we must use a `heapify` function.
+    - <img src="images/max_heap2.png" width="500">
+    - `n/2 - 1` is the first index of a non-leaf node.
+    - Heapify function, which bring larger element in top. Used just for one sub-tree recursively.
+      ```c
+      void heapify(int arr[], int n, int i) {
+        // Find largest among root, left child and right child
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        
+        if(left < n && arr[left] > arr[largest])
+        largest = left;
+        
+        if(right < n && arr[right] > arr[largest])
+            largest = right;
+        
+        // Swap and continue heapifying if root is not largest
+        if (largest != i) {
+            swap(&arr[i], &arr[largest]);
+            heapify(arr, n, largest);
+        }
+      }
+      ```
+  
+    - Firstly, it is a kind of pre-condition for swapping, we must bring our tree to MAX-HEAP, so that the largest element is in top. It is needed so that we start sorting the array.
+      ```c
+      # Max-heap creation
+      for(int i = n/2 - 1; i >= 0; i--)
+          heapify(arr, n, i);
+      ```
+    - After that we swap elements, and apply heapify again.
+      ```c 
+       // Build heap (rearrange array)
+       for (int i = n/2 - 1; i >= 0; i--)
+            swap(arr[i], arr[0]);
+            heapify(arr, n, i);
+      ```
+    
+  
 ## Linked List
 - Array Limitations:
     - Fixed size
