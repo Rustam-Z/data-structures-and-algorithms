@@ -265,7 +265,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
   - [Bubble sort](https://www.programiz.com/dsa/bubble-sort) - best O(n) else O(n<sup>2</sup>). Compares adjacent elements, and swaps elements bringing large elements to the end. [Python code](code/bubble_sort.py)
   - **[Insertion sort](https://www.programiz.com/dsa/insertion-sort) - best O(n) else O(n<sup>2</sup>). Places unsorted element at its suitable place in each iteration. [Python code](code/insertion_sort.py)
   - **[Merge sort](https://www.programiz.com/dsa/merge-sort) - O(n\*logn). It is based on *Divide and Conquer Algorithm* divides in the middle, sorts, then combines.
-  - [Quick sort](https://www.programiz.com/dsa/quick-sort) - worst O(n<sup>2</sup>) else O(n\*logn). Based on *Divide and Conquer Algorithm*, larger and smaller elements are placed after and before pivot element.
+  - [Quick sort](https://www.programiz.com/dsa/quick-sort) - **PIVOT**, worst O(n<sup>2</sup>) else O(n\*logn). Based on *Divide and Conquer Algorithm*, larger and smaller elements are placed after and before pivot element.
   - [Heap sort](https://www.programiz.com/dsa/heap-sort) - O(n\*logn).
   - Radix sort
   - Bucket sort
@@ -335,7 +335,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
   
     - Firstly, it is a kind of pre-condition for swapping, we must bring our tree to MAX-HEAP, so that the largest element is in top. It is needed so that we start sorting the array.
       ```c
-      # Max-heap creation
+      // Max-heap creation
       for(int i = n/2 - 1; i >= 0; i--)
           heapify(arr, n, i);
       ```
