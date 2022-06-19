@@ -1,4 +1,4 @@
- # Data Structures and Computer Algorithms
+# Data Structures and Computer Algorithms
 Lecture notes on Data Structures `SOC-2010` and Computer Algorithms `SOC-3030`
 
 By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
@@ -22,6 +22,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - [Sorting techniques](#sorting-techniques)
   - [Merge sort](#merge-sort)
   - [Quick sort](#quick-sort)
+  - [Heap sort](#heap-sort)
 - [Linked list](#linked-list)
     - [Insertion at beginning](#insertion-at-beginning-in-linked-list)
     - [Insertion at the end](#insertion-at-the-end-in-linked-list)
@@ -128,7 +129,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
   - **dynamic** (run time memory allocation), linked list
     - Advantage: faster insertion and deletion
     - Disadvantage: slow access
-    
+
 ### Asymptotic notations
 - Efficiency measured in terms of **TIME** and **SPACE**. In terms of number of operations.
 - Asymptotic complexity 
@@ -184,7 +185,6 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
     <img src="images/time_complexity1.png" width=500>
     <img src="images/time_complexity2.png" width=500>
-
 
 ## Searching Techniques
 - **Searching** is an operation which finds the location of a given element in a list.
@@ -249,12 +249,11 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     
     end procedure
     ```
-- <a href="codes/02_binary_search.cpp">Binary search in C++</a> | <a href="codes/02_binary_search.py">Binary search in Python</a> 
+- <a href="code/02_binary_search.cpp">Binary search in C++</a> | <a href="code/02_binary_search.py">Binary search in Python</a> 
 - Analysis:
     - Best-case `O(1)` 
     - Average `O(log n)` 
     - Worst-case `O(log n)`
-
 
 ## Sorting techniques
 - **Sorting** - a process of arranging a set of data in certain order
@@ -346,26 +345,25 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
             swap(arr[i], arr[0]);
             heapify(arr, n, i);
       ```
-    
-  
+
 ## Linked List
-- Array Limitations:
+- Array limitations:
     - Fixed size
     - Physically stored in consecutive memory locations
     - To insert or delete items, may need to shift data
 - Variations of linked list: linear linked list, circular linked list, double linked list
-- *head* pointer "defines" the linked list (it is not a node) <br><img src="images/08.png" width=600>
-- Advantages of Linked Lists:
+- **head** pointer "defines" the linked list (it is not a node)<br><img src="images/08.png" width=600>
+- Advantages of **Linked Lists**
     - The items do NOT have to be stored in consecutive memory locations.
         - So, can insert and delete items without shifting data.
         - Can increase the size of the data structure easily.
     - Linked lists can grow dynamically (i.e. at run time) – the amount of memory space allocated can grow and shrink as needed.
-- Disadvantages of Linked Lists:
+- Disadvantages of **Linked Lists**
     - A linked list will use more memory storage than arrays. It has more memory for an additional linked field or next pointer field.
-    - Linked list elements cannot randomly accessed.
+    - Linked list elements cannot randomly be accessed.
     - Binary search cannot be applied in a linked list.
     - A linked list takes more time in traversing of elements.
-- Nodes:
+- **Node**
     - A linked list is an ordered sequence of items called **nodes**
     - A node is the basic unit of representation in a linked list
     - A node in a singly linked list consists of two fields:
@@ -373,27 +371,27 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
         - A *link (pointer)* to the *next* node in the structure
     - The first item (node) in the linked list is accessed via a front or head pointer
         - The linked list is defined by its head (this is its starting point)
-- We will use `Node` and `List` classes (https://youtu.be/Dfu7PeZ3v2Q)
-    ```cpp
-    class Node {
-        public:
-            int info;	 // data
-            Node* next;	 // pointer to next node in the list
-            /*Node(int val) {info = val; next=NULL}*/
-    };
-
-    class List {
-        public:
-            // head: a pointer to the first node in the list. 
-            // Since the list is empty initially, head is set to NULL
-            List(void) {head = NULL;} // constructor
-            ~List(void);			  // destructor
-	    
-        private:
-	        Node* head;
-    };
-    // isEmpty, insertNode, findNode, deleteNode, displayList
-    ```
+- We will use `ListNode` and `LinkedList` classes (https://youtu.be/Dfu7PeZ3v2Q)
+  ```cpp
+  class Node {
+      public:
+          int info; // data
+          Node* next; // pointer to next node in the list
+          /*Node(int val) {info = val; next=NULL;}*/
+  };
+  
+  class List {
+      public:
+          // head: a pointer to the first node in the list. 
+          // Since the list is empty initially, head is set to NULL
+          List(void) {head = NULL;} // constructor
+          ~List(void);			  // destructor
+      
+      private:
+          Node* head;
+  };
+  // isEmpty, insertNode, findNode, deleteNode, displayList
+  ```
 - Boundary condition 
     - Empty data structure
     - Single element in the data structure
@@ -406,50 +404,50 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - It is just a 2-step algorithm:
     - `New node` should be connected to the `first node`, which means the head. This can be achieved by assigning the address of node to the head.
     - `New node` should be considered as a `head`. It can be achieved by declaring head equals to a new node.
--   ```cpp
-    void insertStart(int val) { 
-        Node *node = new Node; // create a new node (node=node)
-        node->info=val; // put value
+```cpp
+void insertStart(int val) { 
+    Node *node = new Node; // create a new node (node=node)
+    node->info=val; // put value
 
-        if(head == NULL) { // check if the list is empty
-            head = node; 
-            node->next = NULL
-        }
-        else { // if list is not empty
-            node->next = head; 
-            head = node; 
-        }
+    if(head == NULL) { // check if the list is empty
+        head = node; 
+        node->next = NULL
     }
-    ```
+    else { // if list is not empty
+        node->next = head; 
+        head = node; 
+    }
+}
+```
 
 ### Insertion at the end in Linked List
--   ```cpp
-    void insertEnd(int val) {
-        Node *node = new Node; // create a new node
-        node->info = val; // put value
-        node->next = NULL; // pointer of last node is NULL 
+```cpp
+void insertEnd(int val) {
+    Node *node = new Node; // create a new node
+    node->info = val; // put value
+    node->next = NULL; // pointer of last node is NULL 
 
-        if(head == NULL) { // if empty
-            node->next = NULL
-            head = node;
-        }
-        else { 
-            Node *cur = new Node();
-            cur = head;
-            while(cur->next != NULL) {
-                cur = cur->next;
-            }
-            cur->next = node;
-        }
+    if(head == NULL) { // if empty
+        node->next = NULL
+        head = node;
     }
-    ```
-### Insertion at Particular Position
+    else { 
+        Node *cur = new Node();
+        cur = head;
+        while(cur->next != NULL) {
+            cur = cur->next;
+        }
+        cur->next = node;
+    }
+}
+```
+### Insertion at particular position
 - In this case, we don’t disturb the `head` and `tail` nodes. Rather, a new node is inserted between two consecutive nodes. 
 - We call one node as `current` and the other as `previous`, and the new node is placed between them.
 - Two steps we need to insert between `previous` and `currect`:
     - Pass the address of the new node in the next field of the previous node.
     - Pass the address of the current node in the next field of the new node.
--   ```cpp
+    ```cpp
     void insertPosition(int pos, int val) {
         Node *pre; 
         Node *cur; 
@@ -462,11 +460,11 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
             pre = cur; 
             cur = cur->next; 
         } 
-        pre->next=node; 
-        node->next=cur; 
+        pre->next = node; 
+        node->next = cur; 
     }
     ```
--   ```cpp
+    ```cpp
     void insertSpecificValue(int sp_val, int data) {     
         Node *pre; 
         Node *cur; 
@@ -484,13 +482,13 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     }
     ```
 
-### Deleting the First Node from a Linked List
-- Following steps we need to remove the first node:
+### Deleting the first node from a Linked List
+- Following steps, we need to remove the first node:
     - Check if the linked list exists or not `if(head == NULL)`.
     - Check if it is one element list.
     - However, if there are nodes in the linked list, then we use a pointer variable `PTR` that is set to point to the first node of the list. For this, we initialize `PTR` with Head that stores the address of the first node of the list. 
     - Head is made to point to the next node in sequence and finally the memory occupied by the node pointed by PTR is freed and returned to the free pool.
--   ```cpp
+    ```cpp
     void deleteFirst() {
         if(head == NULL) { // if empty
             cout << "Underflow" << endl;
@@ -510,12 +508,12 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     }
     ```
 
-### Deleting the Last Node from a Linked List
+### Deleting the last node from a Linked List
 - Following steps we need to remove the first node:
     - Check if the linked list exists or not `if(head == NULL)`.
     - Check if it is one element list.
     - Take a pointer variable `PTR` and initialize it with `head`. That is, `PTR` now points to the first node of the linked list. In the while loop, we take another pointer variable `PREPTR` such that it always points to one node before the PTR. Once we reach the last node and the second last node, we set the NEXT pointer of the second last node to NULL, so that it now becomes the (new) last node of the linked list. The memory of the previous last node is freed and returned back to the free pool.
--   ```
+    ```
     STEP 1: IF START = NULL
             WRITE UNDERFLOW
             Go to STEP 8
@@ -531,21 +529,21 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     ```
 
 ### Deleting the Specific Node in a Linked List
--   ```
-    Step 1: IF START = NULL
-            Write UNDERFLOW Go to Step 10
-            [END OF IF]
-    Step 2: SET PTR = START
-    Step 3: SET PREPTR = PTR
-    Step 4: Repeat Steps 5 and 6 while PREPTR-> DATA I = NUM
-    Step 5: SET PREPTR = PTR
-    Step 6: SET PTR = PTR -> NEXT
-            [END OF LOOP)
-    Step 7: SET TEMP = PTR
-    Step 8: SET PREPTR -> NEXT - PTR-> NEXT
-    Step 9: FREE TEMP
-    Step 10: EXIT
-    ```
+```
+Step 1: IF START = NULL
+        Write UNDERFLOW Go to Step 10
+        [END OF IF]
+Step 2: SET PTR = START
+Step 3: SET PREPTR = PTR
+Step 4: Repeat Steps 5 and 6 while PREPTR-> DATA I = NUM
+Step 5: SET PREPTR = PTR
+Step 6: SET PTR = PTR -> NEXT
+        [END OF LOOP)
+Step 7: SET TEMP = PTR
+Step 8: SET PREPTR -> NEXT - PTR-> NEXT
+Step 9: FREE TEMP
+Step 10: EXIT
+```
 
 ## Circular Linked List
 - https://youtu.be/7ELt4-z4YeI
@@ -736,7 +734,7 @@ void insertNode(int item,int pos) {
     - Step 4: Repeatedly `pop` from the STACK and `add` it to the postfix expression until the STACK is empty
     - Step 5: EXIT
 - If `/` adds to `((-*` we will take only `*`, then it will be `((-/`
--   ```
+    ```
     Example: (A * B) + (C / D) – (D + E)
 
     (A * B) + (C / D) – (D + E))    [put extra ")" at last]
@@ -750,16 +748,16 @@ void insertNode(int item,int pos) {
     +	    (+	        AB*
     (	    (+(	        AB*
     C	    (+(	        AB*C
-    /	    (+(/	    AB*C
-    D	    (+(/	    AB*CD
+    /	    (+(/        AB*C
+    D	    (+(/        AB*CD
     )	    (+	        AB*CD/
     -	    (-	        AB*CD/+
-    (	    (-( 	    AB*CD/+
-    D	    (-( 	    AB*CD/+D
-    +	    (-(+	    AB*CD/+D
-    E	    (-(+	    AB*CD/+DE
-    )	    (-	        AB*CD/+DE+
-    )		            AB*CD/+DE+-
+    (	    (-(         AB*CD/+
+    D	    (-(         AB*CD/+D
+    +	    (-(+        AB*CD/+D
+    E	    (-(+        AB*CD/+DE
+    )	    (-          AB*CD/+DE+
+    )                   AB*CD/+DE+-
     ```
 
 ### Evaluation of Postfix expression
@@ -809,9 +807,9 @@ void insertNode(int item,int pos) {
     4	    )+	        2 9 / 4
     -	    )+-	        2 9 / 4
     3	    )+-	        2 9 / 4 3
-    *	    )+-* 	    2 9 / 4 3
-    7	    )+-*	    2 9 / 4 3 7
-    /	    )+-*/	    2 9 / 4 3 7
+    *	    )+-*        2 9 / 4 3
+    7	    )+-*        2 9 / 4 3 7
+    /	    )+-*/       2 9 / 4 3 7
     14	    )+-*/       2 9 / 4 3 7 14
     (                   2 9 / 4 3 7 14 / * - +
 
@@ -837,8 +835,8 @@ void insertNode(int item,int pos) {
     4	    (+	        2 9 / 4
     -	    (+-	        2 9 / 4
     3	    (+-	        2 9 / 4 3
-    *	    (+-* 	    2 9 / 4 3
-    7	    (+-*	    2 9 / 4 3 7
+    *	    (+-*        2 9 / 4 3
+    7	    (+-*        2 9 / 4 3 7
     /	    (+-*/       2 9 / 4 3 7
     14	    (+-*/       2 9 / 4 3 7 14
     )                   2 9 / 4 3 7 14 / * - +
@@ -855,14 +853,14 @@ void insertNode(int item,int pos) {
     Example: 14 / 7 * 3 - 4 + 9 / 2 ==> + - * / 14 7 3 4 / 9 2
 
     Char	Stack	            Operation
-    2	    2	
-    9	    2, 9	
-    /	    4	                9/2 [but in postfix we did 2/9]
-    4	    4, 4 	
-    3	    4, 4, 3	    
-    7	    4, 4, 3, 7
-    14	    4, 4, 3, 7, 14
-    /	    4, 4, 3, 2	        14/2  
+    2       2	
+    9       2, 9	
+    /       4	                9/2 [but in postfix we did 2/9]
+    4       4, 4 	
+    3       4, 4, 3	    
+    7       4, 4, 3, 7
+    14      4, 4, 3, 7, 14
+    /       4, 4, 3, 2          14/2  
     *       4, 4, 6             2*2
     -       4, 2                6-4
     +       6                   2+4
