@@ -117,7 +117,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - **Encapsulation** is a method to hide the data in a single entity or unit along with a method to protect information from outside. Encapsulation can be implemented using by access modifier i.e. private, protected and public.
 
 ### What is the data structure
-- A **data structure** is the organization of the data in a way so that it can be used efficiently.
+- A [**data structure**](https://www.scaler.com/topics/data-structures/what-is-data-structure/) is the organization of the data in a way so that it can be used efficiently.
 - It is used to implement an ADT.
 - ADT tells us *what* is to be done and data structures tells use *how* to do it.
 - Types:
