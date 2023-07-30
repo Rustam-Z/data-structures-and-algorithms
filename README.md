@@ -7,6 +7,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
 ## Learning roadmap
 - [ ] START HERE: [Naso Academy DS playlist](https://www.youtube.com/playlist?list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y)
+- [ ] [The Last Algorithms Course You'll Need](https://frontendmasters.com/courses/algorithms/introduction/)
 - [ ] ALGORITHMS VIDEO: [Jenny's DSA playlist](https://www.youtube.com/playlist?list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU)
 - [ ] READING: [programiz.com/dsa](https://www.programiz.com/dsa)
 - [ ] SHORT VIDEOS: [Data Structures by Google Software Engineer](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
