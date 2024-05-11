@@ -12,6 +12,15 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - [ ] READING: [programiz.com/dsa](https://www.programiz.com/dsa)
 - [ ] SHORT VIDEOS: [Data Structures by Google Software Engineer](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
 
+## Practicing roadmap
+- [ ] [interviewbit.com](https://www.interviewbit.com/courses/programming/)
+- [ ] [LeetCode Explore](https://leetcode.com/explore/)
+- [ ] [LeetCode study plan](https://leetcode.com/study-plan/) — Data Structure 1, Algorithm 1, Programming Skills 1
+- [ ] "Cracking the coding interview" + [CTCI problems in LeetCode](https://leetcode.com/discuss/general-discussion/1152824/cracking-the-coding-interview-6th-edition-in-leetcode)
+- [ ] [LeetCode study plan](https://leetcode.com/study-plan/) — Data Structure 2, Algorithm 2, Programming Skills 2
+- [ ] AlgoExpert
+- [ ] [neetcode.io](https://neetcode.io/) & [NeetCode playlist](https://www.youtube.com/c/NeetCode/playlists)
+      
 ## Contents
 - [Introduction to Data Structures](#introduction-to-data-structures)
     - [Introduction](#introduction)
@@ -73,7 +82,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 ## Introduction to Data Structures
 ### Introduction
 - Data structure usually refers to a *data organization*, *management*, and *storage* in main memory that enables efficiently access and modification.
-- If **data** is arranged in a systematic way then it gets the structure and became meaningful. This meaningful and processed data is the **information**.
+- If **data** is arranged systematically then it gets the structure and becomes meaningful. This meaningful and processed data is the **information**.
 - The **cost** of a solution is the amount of resources that the solution needs.
 - A data structure requires:
     - Space for each data item it stores
@@ -92,7 +101,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - Operations on data structures: 
     - Traversing, Searching, Inserting, Deleting, Sorting, Merging.
 - **Algorithm** properties:
-    - It must be correct (must produce desired output).
+    - It must be correct (must produce the desired output).
     - It is composed of a series of concrete steps.
     - There can be no ambiguity.
     - It must be composed of a finite number of steps.
@@ -100,7 +109,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - To summarize:
     - **Problem** - a function of inputs and mapping them to outputs.
     - **Algorithm** - a step-by-step set of operations to solve a specific problem or a set of problems.
-    - **Program** - a specific sequences of instructions in a prog. lang., and it may contain the implementation of many algorithms.
+    - **Program** - a specific sequence of instructions in a prog. lang., and it may contain the implementation of many algorithms.
 
 ### Abstract data type
 - https://youtu.be/ZniDyolzrBw, https://youtu.be/n0e27Cpc88E
@@ -114,20 +123,20 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     - The *properties* of an ADT are its data.
     - The *behaviors* of an ADT are its operations or functions.
 - ADT example: stack (can be implemented with array or linked list)
-- **Abstraction** is the method of hiding the unwanted information.
-- **Encapsulation** is a method to hide the data in a single entity or unit along with a method to protect information from outside. Encapsulation can be implemented using by access modifier i.e. private, protected and public.
+- **Abstraction** is the method of hiding unwanted information.
+- **Encapsulation** is a method to hide the data in a single entity or unit along with a method to protect information from outside. Encapsulation can be implemented using an access modifier i.e. private, protected, and public.
 
 ### What is the data structure
 - A **data structure** is the organization of the data in a way so that it can be used efficiently.
 - It is used to implement an ADT.
-- ADT tells us *what* is to be done and data structures tells use *how* to do it.
+- ADT tells us *what* is to be done and data structures tell use *how* to do it.
 - Types:
   - **linear** (stack, array, linked list)
   - **non-linear** (tree, graph)
   - **static** (compile time memory allocation), array
     - Advantage: fast access
     - Disadvantage: slow insertion and deletion
-  - **dynamic** (run time memory allocation), linked list
+  - **dynamic** (run-time memory allocation), linked list
     - Advantage: faster insertion and deletion
     - Disadvantage: slow access
 
@@ -135,7 +144,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - Efficiency measured in terms of **TIME** and **SPACE**. In terms of number of operations.
 - Asymptotic complexity 
     - The running time depends on the *size of the input* 
-    - `f(n)` = running time of an algorithm, where `n`= input size. We are interested in growth of `n` to calculate the `f(n)`
+    - `f(n)` = running time of an algorithm, where `n`= input size. We are interested in the growth of `n` to calculate the `f(n)`
     - "Functions do more work for bigger input"
     - Drop all constants: `3n, 5n, 100n => n`, [why?](https://www.youtube.com/watch?v=MgyLGVUn8LQ)
     - Ignore lower order terms: n<sup>3</sup> + n<sup>2</sup> + n + 5 => n<sup>3</sup>
@@ -180,7 +189,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     n >= 2                    n >= -1
 
     c2 = 4, n >= 2            c1 = 1, n >= 1
-    n >=2 // We must take greater number, which is true for both
+    n >=2 // We must take a greater number, which is true for both
     ```
 - [Loops, if-else asymptotic analysis](https://www.youtube.com/watch?v=BpiMRyWoDu0)
 
@@ -188,7 +197,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     <img src="images/time_complexity2.png" width=500>
 
 ## Searching Techniques
-- **Searching** is an operation which finds the location of a given element in a list.
+- **Searching** is an operation that finds the location of a given element in a list.
 - The search is said to be **successful** or **unsuccessful** depending on whether the element that is to be searched is found or not.
 
 ### Linear Search
@@ -213,13 +222,13 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
 ### Binary Search
 - Binary Search is a searching algorithm for finding an element's position in a **sorted array**.
-- It's fast and efficient, tIme complexity of binary search: `O(log n)`
+- It's fast and efficient, time complexity of binary search: `O(log n)`
 - In this method:
     - To search an element we compare it with the element present at the center of the list. If it matches then the search is successful.
     - Otherwise, the list is divided into two halves:
-        - One from 0th element to the center element (first half)
-        - Another from center element to the last element (second half)
-    - The searching will now proceed in either of the two halves depending upon whether the element is greater or smaller than the center element.
+        - One from the 0th element to the center element (first half)
+        - Another from the center element to the last element (second half)
+    - The search will now proceed in either of the two halves depending upon whether the element is greater or smaller than the center element.
     - If the element is smaller than the center element then the searching will be done in the first half, otherwise in the second half.
 - It can be done recursively or iteratively.
 - Pseudocode:
@@ -257,13 +266,13 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     - Worst-case `O(log n)`
 
 ## Sorting techniques
-- **Sorting** - a process of arranging a set of data in certain order
-- **Internal sorting** - deals with data in memory of computer
-- **External sorting** - deals with data stored in data files when data is in large volume
+- **Sorting** - a process of arranging a set of data in a certain order.
+- **Internal sorting** - deals with data in the memory of the computer.
+- **External sorting** - deals with data stored in data files when data is in large volume.
 - Types of sorts:
-  - [Selection sort](https://www.programiz.com/dsa/selection-sort) - O(n<sup>2</sup>). Selects the smallest element from an unsorted list and places that element in front. [Python code](code/selection_sort.py)
-  - [Bubble sort](https://www.programiz.com/dsa/bubble-sort) - best O(n) else O(n<sup>2</sup>). Compares adjacent elements, and swaps elements bringing large elements to the end. [Python code](code/bubble_sort.py)
-  - **[Insertion sort](https://www.programiz.com/dsa/insertion-sort) - best O(n) else O(n<sup>2</sup>). Places unsorted element at its suitable place in each iteration. [Python code](code/insertion_sort.py)
+  - [Selection sort](https://www.programiz.com/dsa/selection-sort) - O(n<sup>2</sup>). Selects the smallest element from an unsorted list and places that element in front. [Python code](code/selection_sort.py).
+  - [Bubble sort](https://www.programiz.com/dsa/bubble-sort) - best O(n) else O(n<sup>2</sup>). Compares adjacent elements, and swaps elements bringing large elements to the end. [Python code](code/bubble_sort.py).
+  - **[Insertion sort](https://www.programiz.com/dsa/insertion-sort) - best O(n) else O(n<sup>2</sup>). Places unsorted element at its suitable place in each iteration. [Python code](code/insertion_sort.py).
   - **[Merge sort](https://www.programiz.com/dsa/merge-sort) - O(n\*logn). It is based on *Divide and Conquer Algorithm* divides in the middle, sorts, then combines.
   - [Quick sort](https://www.programiz.com/dsa/quick-sort) - **PIVOT**, worst O(n<sup>2</sup>) else O(n\*logn). Based on *Divide and Conquer Algorithm*, larger and smaller elements are placed after and before pivot element.
   - [Heap sort](https://www.programiz.com/dsa/heap-sort) - O(n\*logn).
@@ -273,26 +282,26 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
 ### [Merge sort](https://www.programiz.com/dsa/merge-sort) 
 - [Python code](code/merge_sort.py)
-- Problem is divided into two sub-problems. Each problem is solved individually. Finally, sub-problems are combined to final solution.
+The problem is divided into two sub-problems. Each problem is solved individually. Finally, sub-problems are combined to the final solution.
 - Divide: we split `A[p..r]` into two arrays `A[p..q]` and `A[q+1, r]`
 - Conquer: we sort both sub-arrays `A[p..q]` and `A[q+1, r]`, so this part is recursive. We use merge sort to sort both sub-arrays.
 - Combine: we combine the results by creating a sorted array `A[p..r]` from two sorted sub-arrays `A[p..q]` and `A[q+1, r]`
 <br><img src="images/merge_sort.png" width="500">
-- How do we merge (combine)? We need to two pointers i, j to track current position in sub-arrays. Basically, we are placing the mim value to final array.
+- How do we merge (combine)? We need two pointers i, j to track the current position in sub-arrays. Basically, we are placing the mim value to the final array.
 <br><img src="images/merge_step.png" width="500">
 
 ### [Quick sort](https://www.programiz.com/dsa/quick-sort) 
 - [Python code](code/quick_sort.py)
-- Based on divide and conquer approach.
+- Based on the divide and conquer approach.
 - Algorithm:
   - An array is divided into sub-arrays by selecting a **pivot element** (element selected from the array).
-  - While dividing the array, the pivot element should be positioned in such a way that elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.
+  - While dividing the array, the pivot element should be positioned in such a way that elements less than the pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.
   - The left and right sub-arrays are also divided using the same approach. This process continues until each subarray contains a single element.
   - At this point, elements are already sorted. Finally, elements are combined to form a sorted array
 - Working with Quicksort algorithm:
-  1. Select the pivot element. We select the rightmost element of array as pivot element.
+  1. Select the pivot element. We select the rightmost element of the array as the pivot element.
   <br><img src="images/quicksort1.png" width=500>
-  2. Rearrange the array. We rearrange smaller and larger elements to right and left side of pivot. 
+  2. Rearrange the array. We rearrange smaller and larger elements to the right and left side of the pivot. 
   <br><img src="images/quicksort2.png" width=500>
   3. How do we rearrange the array? 
      1. We need PIVOT which is last element, "i" the first largest element from left side, and "j" which is the iterator (next element in array). 
@@ -349,7 +358,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 
 ## Linked List
 - Array limitations:
-    - Fixed size
+    - Fixed-size
     - Physically stored in consecutive memory locations
     - To insert or delete items, may need to shift data
 - Variations of linked list: linear linked list, circular linked list, double linked list
@@ -363,7 +372,7 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
     - A linked list will use more memory storage than arrays. It has more memory for an additional linked field or next pointer field.
     - Linked list elements cannot randomly be accessed.
     - Binary search cannot be applied in a linked list.
-    - A linked list takes more time in traversing of elements.
+    - A linked list takes more time to traverse of elements.
 - **Node**
     - A linked list is an ordered sequence of items called **nodes**
     - A node is the basic unit of representation in a linked list
@@ -396,15 +405,15 @@ By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
 - Boundary condition 
     - Empty data structure
     - Single element in the data structure
-    - Adding / removing beginning of data structure
-    - Adding / removing end of data structure
+    - Adding/removing beginning of the data structure
+    - Adding/removing end of the data structure
     - Working in the middle
 
-### Insertion at beginning in Linked List
+### Insertion at the beginning in Linked List
 - https://youtu.be/yMoHuOZzMpk
 - It is just a 2-step algorithm:
-    - `New node` should be connected to the `first node`, which means the head. This can be achieved by assigning the address of node to the head.
-    - `New node` should be considered as a `head`. It can be achieved by declaring head equals to a new node.
+    - `New node` should be connected to the `first node`, which means the head. This can be achieved by assigning the address of the node to the head.
+    - `New node` should be considered as a `head`. It can be achieved by declaring head equal to a new node.
 ```cpp
 void insertStart(int val) { 
     Node *node = new Node; // create a new node (node=node)
@@ -442,10 +451,10 @@ void insertEnd(int val) {
     }
 }
 ```
-### Insertion at particular position
+### Insertion at a particular position
 - In this case, we don’t disturb the `head` and `tail` nodes. Rather, a new node is inserted between two consecutive nodes. 
-- We call one node as `current` and the other as `previous`, and the new node is placed between them.
-- Two steps we need to insert between `previous` and `currect`:
+- We call one node `current` and the other `previous`, and the new node is placed between them.
+- Two steps we need to insert between `previous` and `current`:
     - Pass the address of the new node in the next field of the previous node.
     - Pass the address of the current node in the next field of the new node.
     ```cpp
@@ -486,9 +495,9 @@ void insertEnd(int val) {
 ### Deleting the first node from a Linked List
 - Following steps, we need to remove the first node:
     - Check if the linked list exists or not `if(head == NULL)`.
-    - Check if it is one element list.
+    - Check if it is an element list.
     - However, if there are nodes in the linked list, then we use a pointer variable `PTR` that is set to point to the first node of the list. For this, we initialize `PTR` with Head that stores the address of the first node of the list. 
-    - Head is made to point to the next node in sequence and finally the memory occupied by the node pointed by PTR is freed and returned to the free pool.
+    - Head is made to point to the next node in sequence and finally, the memory occupied by the node pointed by PTR is freed and returned to the free pool.
     ```cpp
     void deleteFirst() {
         if(head == NULL) { // if empty
@@ -512,7 +521,7 @@ void insertEnd(int val) {
 ### Deleting the last node from a Linked List
 - Following steps we need to remove the first node:
     - Check if the linked list exists or not `if(head == NULL)`.
-    - Check if it is one element list.
+    - Check if it is an element list.
     - Take a pointer variable `PTR` and initialize it with `head`. That is, `PTR` now points to the first node of the linked list. In the while loop, we take another pointer variable `PREPTR` such that it always points to one node before the PTR. Once we reach the last node and the second last node, we set the NEXT pointer of the second last node to NULL, so that it now becomes the (new) last node of the linked list. The memory of the previous last node is freed and returned back to the free pool.
     ```
     STEP 1: IF START = NULL
@@ -550,7 +559,7 @@ Step 10: EXIT
 - https://youtu.be/7ELt4-z4YeI
 - In a circular linked list, the last node contains a pointer to the first node. 
 - No node points to NULL!
-- Start at `head`, iterate until you find `head` again: `t == head, t.next == head`
+- Start at `head`, and iterate until you find `head` again: `t == head, t.next == head`
 - Complexity for all operations is `O(n)`
 -   ```cpp
     class  Node {
@@ -620,7 +629,7 @@ void insertNode(int item,int pos) {
 }
 ```
 
-### Deletion a Node in Circular Linked List
+### Deletion of a Node in Circular Linked List
 - From a single-node circular linked list (node points to itself):
     ```cpp
     last = NULL;
@@ -724,12 +733,12 @@ void insertNode(int item,int pos) {
     - Step 2: Push `(` onto the STACK
     - Step 3: Repeat until each character in the infix notation is scanned
         - IF a `(` is encountered, `push` it on the STACK.
-        - IF an `operand` (whether a digit or acharacter) is encountered, `add` it postfix expression.
+        - IF an `operand` (whether a digit or a character) is encountered, `add` it postfix expression.
         - IF a `)` is encountered, then
             - a. Repeatedly `pop` from STACK and `add` it to the postfix expression until a `(` is encountered.
             - b. Discard the `(`. That is, remove the `(` from STACK and do not add it to the postfix expression
         - IF an operator `O` is encountered, then
-            - a. Repeatedly `pop` from STACK and `add` each operator (popped from the STACK) to the postfix expression which has the **same precedence or ahigher precedence than O**
+            - a. Repeatedly `pop` from STACK and `add` each operator (popped from the STACK) to the postfix expression which has the **same precedence or a higher precedence than O**
             - b. `Push` the operator to the STACK
         [END OF IF]
     - Step 4: Repeatedly `pop` from the STACK and `add` it to the postfix expression until the STACK is empty
@@ -784,7 +793,7 @@ void insertNode(int item,int pos) {
 #### First method
 - Algorithm used (Prefix): 
     - Step 1. `Push` `)` onto STACK, and `add` `(` to start of the A.
-    - Step 2. Scan A from right to left and repeat step 3 to 6 for each element of A until the STACK is empty or contain only `)`
+    - Step 2. Scan A from right to left and repeat step 3 to 6 for each element of A until the STACK is empty or contains only `)`
     - Step 3. If an **operand** is encountered add it to B
     - Step 4. If a **right parenthesis** is encountered push it onto STACK
     - Step 5. If an **operator** is encountered then:
@@ -801,7 +810,7 @@ void insertNode(int item,int pos) {
     (14 / 7 * 3 - 4 + 9 / 2 [Put extra "(" to start]
 
     Char	Stack	    Expression
-    2	    )	        Push at beginning ")"
+    2	    )	        Push at the beginning ")"
     /	    )/	        2
     9	    )/	        2 9
     +	    )+	        2 9 /
@@ -848,7 +857,7 @@ void insertNode(int item,int pos) {
     ```
 
 ### Evaluation of Prefix Expression
-- For postfix we eveluated `a+b` but in prefix we will do `b+a`
+- For postfix we evaluated `a+b` but in prefix we will do `b+a`
 
 -   ```
     Example: 14 / 7 * 3 - 4 + 9 / 2 ==> + - * / 14 7 3 4 / 9 2
@@ -872,18 +881,18 @@ void insertNode(int item,int pos) {
 - The queue has a **front** and a **rear**
     - <img src="images/11.png" width=400>
     - Items can be removed only at the **front**
-    - Items can be added only at the ohter end, the **rear**
+    - Items can be added only at the other end, the **rear**
 - Types of queues:
     - Linear queue
     - Circular queue
-    - Double ended queue (Deque)
+    - Double-ended queue (Deque)
     - Priority queue
 
 ### Linear Queue
 - A queue is a sequence of data elements
-- **Enqueue** (add element to back) when an item is `inserted` into the queue, it always goes `at the end` (rear). 
-- **Dequeue** (`remove` element from front) when an item is taken from the queue, it always comes `from the front`. 
-- Implemented using either array or a linear linked list.
+- **Enqueue** (add an element to back) When an item is `inserted` into the queue, it always goes `at the end` (rear). 
+- **Dequeue** (`remove` element from the front), when an item is taken from the queue, it always comes `from the front`. 
+- Implemented using either an array or a linear linked list.
 - Array implementation:
     - **ENQUEUE**
         ```
@@ -942,8 +951,8 @@ void insertNode(int item,int pos) {
 
 ### Circular Queue
 - https://youtu.be/ihEmEcO2Hx8
-- **Drawbacks of linear queue** once the queue is full, eventhough few elements from the front are deleted and some occupied space is relieved, it is not possible to add anymore new elements, as the rear has already reached the Queue’s rear most position.  
-- In circular queue, once the Queue is full the "First" index of the Queue becomes the "Rear" most index, if and only if the "Front" element has moved forward. Otherwise it will  be  a "Queue overflow" state. <br><img src="images/13.png" width=300>
+- **Drawbacks of linear queue** Once the queue is full, even though few elements from the front are deleted and some occupied space is relieved, it is not possible to add anymore new elements, as the rear has already reached the Queue’s rear most position.  
+- In the circular queue, once the Queue is full the "First" index of the Queue becomes the "Rear" most index, if and only if the "Front" element has moved forward. Otherwise, it will  be  a "Queue overflow" state. <br><img src="images/13.png" width=300>
 -  **ENQUEUE** algorithm:
     ```
     Insert-Circular-Q(CQueue, Rear, Front, N, Item)
@@ -993,9 +1002,9 @@ void insertNode(int item,int pos) {
     - `Front` element is assigned to `Item`. 
     - Initially, `Front = -1`.
 
-- While insert `REAR++`, `FRONT`
-- While delete `REAR`, `FRONT++`
-- If `FRONT = REAR + 1` then queue is full! Overflow will occur.
+- While inserting `REAR++`, `FRONT`
+- While deleting `REAR`, `FRONT++`
+- If `FRONT = REAR + 1` then the queue is full! Overflow will occur.
 
 ### Double Ended Queue
 - It is exactly like a queue except that elements can be added to or removed from the **head** or the **tail**.
@@ -1015,7 +1024,7 @@ void insertNode(int item,int pos) {
 - Two elements with the same priority are processed on a first-come-first-served (FCFS) basis.
 
 ## Tree
-- **Root**: node without parent (A)
+- **Root**: node without a parent (A)
 - **Siblings**: nodes share the same parent
 - **Internal node**: node with at least one child (A, B, C, F)
 - **External node** (leaf): node without children (E, I, J, K, G, H, D)
@@ -1037,7 +1046,7 @@ void insertNode(int item,int pos) {
     - The topmost element is called the root node.
     - Each node has 0, 1, or at the most 2 children. 
     - A node that has zero children is called a leaf node or a terminal node. 
-    - Every node contains a data element, a left pointer which points to the left child, and a right pointer which points to the right child
+    - Every node contains a data element, a left pointer that points to the left child, and a right pointer that points to the right child
 - **Complete binary tree** - every level except possibly the last is completely filled. All nodes must appear as far left as possible.
     - <img src="images/16.png" width=400>
 
@@ -1054,7 +1063,7 @@ void insertNode(int item,int pos) {
         ```
     - Every binary tree has a pointer `ROOT`, which points to the root element (topmost element) of the tree. If `ROOT = NULL`, then the tree is **empty**.
 
-- Array implementation of binary treee:
+- Array implementation of binary tree:
     - If `TREE[1] = ROOT` then
         - the left child of a node `K` ==> `2*K`
         - the right child of a node `K` ==> `2*K+1`
@@ -1127,12 +1136,12 @@ void insertNode(int item,int pos) {
 - Main algorithm: <br><img src="images/25.png" width=400>
 
 ## Graphs
-- **Vertices** (nodes), **edges** (lines between vertices), undericted graph, directed graph
+- **Vertices** (nodes), **edges** (lines between vertices), undirected graph, directed graph
 - Adjacent nodes and neighbors:
     ```
     O----O adjacent nodes
     ```
-- **Degree of a node** - Total number os edges containing the node. If deg(u)=0 then **isolated node**.
+- **Degree of a node** - Total number of edges containing the node. If deg(u)=0 then **isolated node**.
 - **Size of a graph** - The size of a graph is the total number of edges in it.
 
 - **Regular graph** - It is a graph where each vertex has the same number of neighbors. That is, every node has the same degree. <br><img src="images/26.png" width=300>
@@ -1145,7 +1154,7 @@ void insertNode(int item,int pos) {
 - Terminology of a Directed graph:
     - *Out-degree of a node* - The out-degree of a node u, written as outdeg(u), is the number of edges that **originate** at u.
     - *In-degree of a node* - The in-degree of a node u, written as indeg(u), is the number of edges that **terminate** at u.
-    - *Degree of a node* - The degree of a node, written as deg(u), is equal to the sum of in-degree and out-degree of that node. 
+    - *Degree of a node* - The degree of a node, written as deg(u), is equal to the sum of the in-degree and out-degree of that node. 
     Therefore, `deg(u) = indeg(u) + outdeg(u)`.
     - *Isolated vertex* - A vertex with degree zero. Such a vertex is not an end-point of any edge.
     - *Pendant vertex* - (also known as leaf vertex) A vertex with degree one.
@@ -1161,16 +1170,16 @@ void insertNode(int item,int pos) {
     2. Depth-first search (uses stack)
 - https://youtu.be/oDqjPvD54Ss
 - Breadth-first search. Complexity = `O(vertices + edges)`, finding the shortest path on unweighted graphs.
-- BFS starts at some arbitrary node of a graph and explores the neighbour nodes first, before moving to the next level neighbours.
+- BFS starts at some arbitrary node of a graph and explores the neighbor nodes first, before moving to the next level neighbors.
 - <img src="images/35.png" width=300>
 
 ### Depth First Search
 - https://youtu.be/7fujbpJ0LB4
 - Complexity = `O(vertices + edges)`
 - Make sure you don't re-visit visited nodes! Continue on the previous node!
-- Backtrack when a dead end is reched! Means don't take the node which has no other neighbours.
+- Backtrack when a dead end is reached! Means don't take the node that has no other neighbors.
 - <img src="images/36.png" width=400>
-- Choose any arbitrary node and PUSH (STATUS 2) it into stack. Then only we will POP. When you POP (STATUS 3) and PUSH neighbours.
+- Choose any arbitrary node and PUSH (STATUS 2) it into the stack. Then only we will POP. When you POP (STATUS 3) and PUSH neighbors.
 
 ## Threaded Binary Tree
 - According to this idea we are going to replace all the null pointers by the appropriate pointer values called threads.
@@ -1188,12 +1197,12 @@ void insertNode(int item,int pos) {
 - A one-way threading and a two-way threading exist.
 
 ### Threaded Binary Tree One-Way
-- In the one way threading of T, 
+- In the one-way threading of T, 
 a thread will appear in the **right field** of a node and will point to the next node in the in-order traversal of T.
 - <img src="images/39.png" width=260>
 
 ### Threaded Binary Tree Two-Way 
-- If `ptr->left_child` is `null`, replace it with a pointer to the node that would be *visited before ptr* in an inorder traversal (**inorder predeccessor**)
+- If `ptr->left_child` is `null`, replace it with a pointer to the node that would be *visited before ptr* in an inorder traversal (**inorder predecessor**)
 - If `ptr->right_child` is `null`, replace it with a pointer to the node that would be *visited after ptr* in an inorder traversal (**inorder successor**)
 - <img src="images/41.png" width=300>
 - ```cpp
@@ -1212,7 +1221,7 @@ a thread will appear in the **right field** of a node and will point to the next
 ## AVL Trees
 - https://youtu.be/1QSYxIKXXP4
 - Adelson-Velsky-Landis - one of many types of Balanced Binary Search Tree. `O(log(n))`
-- **Balanced Factor (BF)**: `BF(node) = HEGHT(node.right) - HEIGH(node.left)`
+- **Balanced Factor (BF)**: `BF(node) = HEIGHT(node.right) - HEIGH(node.left)`
 - Where `HEIGHT(x)` is the hight of node `x`. Which is the **number of edges** between `x` and the **furthest leaf**.
 - -1, 0, +1 balanced factor values.
 
@@ -1255,18 +1264,18 @@ a thread will appear in the **right field** of a node and will point to the next
       d 11      d 100
       ```
 - **Algorithm for creating the Huffman Tree**: 
-    - Step 1- Create a leaf node for each character and build a min heap using all the nodes (The frequency value is used to compare two nodes in min heap)
-    - Step 2- Repeat Steps 3 to 5 while heap has more than one node
-    - Step 3- Extract two nodes, say x and y, with minimum frequency from the heap
-    - Step 4- Create a new internal node z with x as its left child and y as its right child. Also f`requency(z)= frequency(x)+frequency(y)`
-    - Step 5- Add z to min heap
-    - Step 6- Last node in the heap is the root of Huffman tree
+    - Step 1 - Create a leaf node for each character and build a min heap using all the nodes (The frequency value is used to compare two nodes in the min heap).
+    - Step 2 - Repeat Steps 3 to 5 while the heap has more than one node.
+    - Step 3 - Extract two nodes, say x and y, with minimum frequency from the heap.
+    - Step 4 - Create a new internal node z with x as its left child and y as its right child. Also `frequency(z)= frequency(x)+frequency(y)`.
+    - Step 5 - Add z to min heap.
+    - Step 6 - The last node in a heap is the root of the Huffman tree.
 
 - <img src="images/60.png" width=500>
 
 ## M-way trees
 - http://faculty.cs.niu.edu/~freedman/340/340notes/340multi.htm
-- Binary search tree is the binary tree.
+- The binary search tree is the binary tree.
 - Each node has `m` children and `m-1` key fields. The keys in each node are in ascending order.
 - A binary search tree has *one value* in each node and *two subtrees*. This notion easily generalizes to an **M-way search tree**, which has `(M-1)` values per node and `M` subtrees. 
 - M is called the **degree** of the tree. A binary search tree, therefore, has degree 2. 
@@ -1278,9 +1287,9 @@ a thread will appear in the **right field** of a node and will point to the next
 - All leaf nodes must be at the same level.
 - **Inserting**
     - Find the appropriate leaf node
-    - If the leaf node contain less than m-1 keys then insert the element in the increasing order.
+    - If the leaf node contains less than m-1 keys then insert the element in the increasing order.
     - Else if the leaf contains m-1:
         - Insert the new element in the increasing order of elements.
         - Split the node into the two nodes at the median.
-        - Push the median element upto its parent node.
-        - If the parent node also contain m-1 number of keys, then split it too by following the same steps.
+        - Push the median element up to its parent node.
+        - If the parent node also contains an m-1 number of keys, then split it too by following the same steps.
