@@ -1,12 +1,12 @@
-class PrefixtoPostFix:
-    def isOperator(self, x):
-        return x in {'-', '+', '/', '*', '^'}
+class PrefixToPostFix:
+    def is_operator(self, x):
+        return x in {"-", "+", "/", "*", "^"}
 
     def convert(self, expression):
         stack = []
-        for i in range(len(expression)-1, -1, -1):
+        for i in range(len(expression) - 1, -1, -1):
             c = expression[i]
-            if self.isOperator(c):
+            if self.is_operator(c):
                 s1 = stack.pop()
                 s2 = stack.pop()
                 temp = s1 + s2 + c
@@ -20,4 +20,4 @@ class PrefixtoPostFix:
 if __name__ == "__main__":
     prefix = "*/93+*24-76"
     print("Prefix Expression:", prefix)
-    print("Postfix Expression:", PrefixtoPostFix().convert(prefix))
+    print("Postfix Expression:", PrefixToPostFix().convert(prefix))
