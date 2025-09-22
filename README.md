@@ -1,7 +1,7 @@
 # Data Structures and Computer Algorithms
-Lecture notes on Data Structures `SOC-2010` and Computer Algorithms `SOC-3030`
+Lecture notes on Data Structures and Computer Algorithms
 
-By Rustam Zokirov • Fall Semester 2020 • Fall Semester 2021
+By Rustam Zokirov 
 
 > *NOTES ON COMPUTER ALGORITHMS - [HERE](Computer_Algorithms.md)*
 
